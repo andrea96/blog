@@ -1,8 +1,8 @@
 # My personal blog
 To update the blog use the following command:
-> hugo
+```hugo```
 
-> hugodeploy push
+```hugodeploy push```
 
 Note that hugodeploy needs a config file called hugodepoy.yaml (not in this repo because of the .gitignore).
 The template of hugodeploy.yaml is this:
