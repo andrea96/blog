@@ -1,5 +1,6 @@
 # My personal blog
 To update the blog use the following command:
+
 ```hugo```
 
 ```hugodeploy push```
