@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+
+
+
+
+<h1>Archive</h1>
+<table class="u-full-width">
+	<thead>
+		<tr>
+			<th>Post</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+  {{ range (where .Data.Pages "Section" "!=" "") }}
+		<tr>
+			<td><a href="{{ .URL }}">{{ .Title }}</a></td>
+			<td><span class="date">{{ .Date.Format "2006/01/02" }}</span></td>
+		</tr>
+		{{ end }}
+	</tbody>
+</table>
+
+
+<p>That's all folks...</p>
+
+{{ partial "footer.html" . }}
