@@ -5,17 +5,15 @@ body {
   line-height: 1.5em;
 }
 
-
-
-
 .date {
     margin: 0px;
 } 
 
 @media (max-width: 30em) {
-   .menu a {
-    display: block; 
-  }
+    .menu a {
+        padding: 0px;
+        width: 32%;
+    }
  }
 
 
