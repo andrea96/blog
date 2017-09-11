@@ -6,10 +6,29 @@
     <description>Recent content in Posts on Andrea Ciceri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 18:33:25 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 23:39:53 +0200</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SCMRL (I&#39;ve to choose a better name)</title>
+      <link>/posts/scmrl/</link>
+      <pubDate>Mon, 11 Sep 2017 23:39:53 +0200</pubDate>
+      
+      <guid>/posts/scmrl/</guid>
+      <description>Welcome to SCMRL (SCheMeRogueLike, yes I&amp;rsquo;ve to choose a more imaginative name), in this page I will collect the information about this my project.
+2017/09/11 SCMRL is here on GitHub. This is the first commit, I worked on it at the end of July and I decided to upload it only now. The game is not playable but I feared that it could be accidentally deleted so here it is.</description>
+    </item>
+    
+    <item>
+      <title>Vintage tetris written in Guile Scheme</title>
+      <link>/posts/tetris/</link>
+      <pubDate>Sat, 02 Sep 2017 15:15:02 +0200</pubDate>
+      
+      <guid>/posts/tetris/</guid>
+      <description>This isn&amp;rsquo;t really recent but it worths to be mentionated on this site, about one month ago I started reading the Wizard book and I became obsessed with this fantastic language. The first real project I tried was this Tetris implementation using Guile (yep, his sanctity Stallman should be proud of me), the code was is orrible but it allowed me to discover how to make things working pratically. The SICP is a great book but it doesn&amp;rsquo;t offer any real world example.</description>
+    </item>
     
     <item>
       <title>Consonno</title>
