@@ -12,7 +12,7 @@ Welcome to *SCMRL* (SCheMeRogueLike, yes I've to choose a more imaginative name)
 This is the first commit, I worked on it at the end of July and I decided to upload it only now.
 The game is not playable but I feared that it could be accidentally deleted so here it is.
 
-![Incoming GIF](/img/scmrl.gif)
+![](/img/scmrl.gif)
 
 Features implemented:
 
