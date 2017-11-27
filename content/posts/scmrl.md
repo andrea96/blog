@@ -1,5 +1,5 @@
 ---
-title: "SCMRL (I've to choose a better name)"
+title: "SCMRL (SCheMeRogueLike)"
 date: 2017-09-11T23:39:53+02:00
 draft: false
 ---

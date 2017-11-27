@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/unix-zen/</loc>
+    <lastmod>2017-11-27T22:27:25+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/scmrl/</loc>
     <lastmod>2017-09-11T23:39:53+02:00</lastmod>
   </url>
@@ -28,7 +33,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-09-11T23:39:53+02:00</lastmod>
+    <lastmod>2017-11-27T22:27:25+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -39,7 +44,7 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2017-09-11T23:39:53+02:00</lastmod>
+    <lastmod>2017-11-27T22:27:25+01:00</lastmod>
     <priority>0</priority>
   </url>
   

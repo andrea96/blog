@@ -6,13 +6,23 @@
     <description>Recent content on Andrea Ciceri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2017 23:39:53 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Nov 2017 22:27:25 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SCMRL (I&#39;ve to choose a better name)</title>
+      <title>The Zen and the art of the Unix hacking</title>
+      <link>/posts/unix-zen/</link>
+      <pubDate>Mon, 27 Nov 2017 22:27:25 +0100</pubDate>
+      
+      <guid>/posts/unix-zen/</guid>
+      <description>More than two months are passed since my last post, I had some good ideas I would have liked to transform into posts but I&amp;rsquo;m afraid to be too lazy (in my defence I have to say that I&amp;rsquo;ve been really busy). However, maybe because I bought a new mechanical keyboard, maybe because I&amp;rsquo;m going to assemble a new pc for Christmas; this is a new post.
+As I preannunced, since I&amp;rsquo;m building a new pc, I don&amp;rsquo;t want to switch on my new computer for the first time without knowing which software to install, so the purpose of this post is to provide a recipe with my favorite softwares (and their configurations).</description>
+    </item>
+    
+    <item>
+      <title>SCMRL (SCheMeRogueLike)</title>
       <link>/posts/scmrl/</link>
       <pubDate>Mon, 11 Sep 2017 23:39:53 +0200</pubDate>
       
