@@ -18,4 +18,4 @@ relativeURLs = true
     url = "index.xml"
 
 [params]
-    footer = "[Andrea Ciceri](http://www.andreaciceri.altervista.org) 2017"
+    footer = "[Andrea Ciceri](http://www.andreaciceri.altervista.org)"
