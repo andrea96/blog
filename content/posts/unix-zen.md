@@ -15,8 +15,6 @@ I will not give information about the installation process nor the basic needed 
 Besides, there are many important tools that I will omit in my *recipe*, but this is voluntary, if there isn't something it's simply because I like its default configuration.
 Indeed I want to enfatize that this post shows a personal point of view, so let's start:
 
-Prova
-
 This is a draft of the programs I'm going to install:
 
 * i3wm
