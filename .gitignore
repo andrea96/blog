@@ -1,4 +1,6 @@
 hugodeploy.yaml
 deployed/
 public/
+resources/
+#*#
 *~
