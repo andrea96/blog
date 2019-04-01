@@ -26,8 +26,7 @@ body {
 footer a { text-decoration: none; }
 
 
-code { background: #222; }
-pre code { background: black; }
+code { background-color: black; padding: 0px; border: 0px;}
 
 
 img, iframe, video { max-width: 100%; }

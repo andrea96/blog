@@ -52,16 +52,10 @@ Do you like math?
 
 `$$ \frac{1}{\pi} = \frac{\sqrt{8}}{9801} \sum_{n=0}^{\infty}\frac{(4n)!}{(n!)^4}\times\frac{26390n + 1103}{396^{4n}} $$`
 
-Support for syntax highlighting implemented via Javascript:
+Support for syntax highlighting implemented including [GitHub Gist](https://gist.github.com/):
 
-~~~c
-int factorial(int n) {
-    if (n == 0)
-        return 1;
-    else 
-        return n * factorial(n - 1);
-}
-~~~
+
+<code data-gist-id="899342" data-gist-line="11-33"></code>
 
 I can stop now...
          
