@@ -71,7 +71,7 @@ blog_authors = {
 # Default is ``0``, meaning no image.  Setting this to ``1`` will include
 # the first image, when available, to the excerpt.  This option can be set
 # on a per post basis using :rst:dir:`post` directive option ``image``.
-#post_auto_image = 0
+post_auto_image = 1
 
 # Number of seconds (default is ``5``) that a redirect page waits before
 # refreshing the page to redirect to the post.
@@ -99,7 +99,7 @@ blog_authors = {
 # sidebars that link to author and location archive pages.
 html_sidebars = {
     '**': [ 'about.html',
-            'postcard.html', 'navigation.html',
+            'postcard.html', #'navigation.html',
             'recentposts.html', 'tagcloud.html',
             'categories.html',  'archives.html',
             'searchbox.html',
@@ -189,7 +189,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Blog'
+project = u"Blog"
 copyright = u'2019, Andrea Ciceri'
 author = u'Andrea Ciceri'
 
@@ -258,6 +258,8 @@ html_theme = 'alabaster'
 # documentation.
 html_theme_options = {
     'github_button': False,
+    'fixed_sidebar': False,
+    'description': 'My personal blog'
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -265,19 +267,19 @@ html_theme_path = [alabaster.get_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = "Andrea Ciceri's blog"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = None
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = "_static/icon.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -315,7 +317,7 @@ html_static_path = ['_static']
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
