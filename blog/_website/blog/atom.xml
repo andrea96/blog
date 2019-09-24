@@ -7,19 +7,127 @@
   <link href="https://www.andreaciceri.altervista.org/blog/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.5">ABlog</generator>
   <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
-    <title type="text">First Post</title>
-    <id>https://www.andreaciceri.altervista.org/blog/first-post/</id>
+    <title type="text">Midi To Bach</title>
+    <id>https://www.andreaciceri.altervista.org/blog/midi-to-bach/</id>
     <updated>2019-09-23T00:00:00Z</updated>
     <published>2019-09-23T00:00:00Z</published>
-    <link href="https://www.andreaciceri.altervista.org/blog/first-post/" />
+    <link href="https://www.andreaciceri.altervista.org/blog/midi-to-bach/" />
     <author>
-      <name>Andrea Ciceri</name>
+      <name></name>
     </author>
-    <content type="html">&lt;p&gt;World, hello again! This very first paragraph of the post will be used
-as excerpt in archives and feeds. Find out how to control how much is shown
-in &lt;a class=&quot;reference external&quot; href=&quot;http://ablog.readthedocs.org/manual/post-excerpts-and-images/&quot;&gt;Post Excerpts and Images&lt;/a&gt;. Remember
-that you can refer to posts by file name, e.g. &lt;code class=&quot;docutils literal notranslate&quot;&gt;&lt;span class=&quot;pre&quot;&gt;:ref:`first-post`&lt;/span&gt;&lt;/code&gt; results
-in &lt;a class=&quot;reference internal&quot; href=&quot;../first-post/#first-post&quot;&gt;&lt;span class=&quot;std std-ref&quot;&gt;First Post&lt;/span&gt;&lt;/a&gt;. Find out more at &lt;a class=&quot;reference external&quot; href=&quot;http://ablog.readthedocs.org/manual/cross-referencing-blog-pages/&quot;&gt;Cross-Referencing Blog Pages&lt;/a&gt;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;You know these videos on YouTube where someone has recorded himself playing
+every single notes and then, after days of editing, has created a smooth video
+where he plays an entire song? They are usually titled like &lt;em&gt;1% music skills,
+99% editing skills&lt;/em&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">From Brainfuck to Python bytecode</title>
+    <id>https://www.andreaciceri.altervista.org/blog/brainfuck-pyc/</id>
+    <updated>2019-08-27T00:00:00Z</updated>
+    <published>2019-08-27T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/brainfuck-pyc/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;About one month ago I wrote &lt;a class=&quot;reference external&quot; href=&quot;https://gist.github.com/andrea96/913aa9667d89af8e2ab45e99e557c2aa&quot;&gt;this&lt;/a&gt; simple transpiler from &lt;a class=&quot;reference external&quot; href=&quot;https://en.wikipedia.org/wiki/Brainfuck&quot;&gt;Brainfuck&lt;/a&gt; to Python
+bytecode. I’m going to assume you already can “program” in Brainfuck, otherwise
+I advise you to read the &lt;a class=&quot;reference external&quot; href=&quot;https://esolangs.org/wiki/Brainfuck&quot;&gt;dedicated page on Esolang&lt;/a&gt;, in my opinion the best
+place to learn about the language. I’m also assuming that you have a minimal
+knowledge about &lt;a class=&quot;reference external&quot; href=&quot;https://en.wikipedia.org/wiki/Stack_machine&quot;&gt;stack machines&lt;/a&gt;, personally I only used them as a theorical
+objects during some proofs. I learned to use them as a real software only during
+the creation of this transpiler.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">Lambda calculus in Javascript</title>
+    <id>https://www.andreaciceri.altervista.org/blog/lambda/</id>
+    <updated>2019-03-31T00:00:00Z</updated>
+    <published>2019-03-31T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/lambda/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;This sunday I enjoyed creating some simple functions using only the &lt;a class=&quot;reference external&quot; href=&quot;https://en.wikipedia.org/wiki/Lambda_calculus&quot;&gt;lambda
+calculus&lt;/a&gt;, I chose to use Javascript because of the simple syntax for the
+lambda functions. In substance in javscript it’s simple to translate something
+like &lt;span class=&quot;math notranslate nohighlight&quot;&gt;\(\lambda x . x\)&lt;/span&gt; into &lt;code class=&quot;code js javascript docutils literal notranslate&quot;&gt;&lt;span class=&quot;punctuation&quot;&gt;&lt;span class=&quot;pre&quot;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;name other&quot;&gt;&lt;span class=&quot;pre&quot;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;&lt;span class=&quot;pre&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;punctuation&quot;&gt;&lt;span class=&quot;pre&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;name other&quot;&gt;&lt;span class=&quot;pre&quot;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">Metaballs and marching cubes</title>
+    <id>https://www.andreaciceri.altervista.org/blog/metaballs/</id>
+    <updated>2018-12-19T00:00:00Z</updated>
+    <published>2018-12-19T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/metaballs/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;In the last days I started playing with &lt;a class=&quot;reference external&quot; href=&quot;https://threejs.org/&quot;&gt;three.js&lt;/a&gt;,
+basically it’s a &lt;em&gt;JavaScript&lt;/em&gt; library that manages animated 3d objects and
+permits to render them.
+I was interested in computer graphics and I found this library a wonderful
+sandbox capable of running in my browser as a simple &lt;em&gt;Canvas&lt;/em&gt; (thanks to
+&lt;a class=&quot;reference external&quot; href=&quot;https://www.khronos.org/webgl/&quot;&gt;WebGL&lt;/a&gt;).&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">The Zen and the art of the Unix hacking</title>
+    <id>https://www.andreaciceri.altervista.org/blog/unix-zen/</id>
+    <updated>2017-11-27T00:00:00Z</updated>
+    <published>2017-11-27T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/unix-zen/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;More than two months has passed since my last post, I had some good ideas I
+would have liked to transform into posts but I’m afraid to be too lazy (in my
+defence I have to say that I’ve been really busy). However, maybe because I
+bought a new mechanical keyboard, maybe because I’m going to assemble a new pc
+for Christmas; this is a new post.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">SCMRL (SCheMeRogueLike)</title>
+    <id>https://www.andreaciceri.altervista.org/blog/scmrl/</id>
+    <updated>2017-09-11T00:00:00Z</updated>
+    <published>2017-09-11T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/scmrl/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to &lt;em&gt;SCMRL&lt;/em&gt; (SCheMeRogueLike, yes I’ve to choose a more imaginative
+name), in this page I will collect the information about this my project.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">Vintage tetris written in Guile Scheme</title>
+    <id>https://www.andreaciceri.altervista.org/blog/tetris/</id>
+    <updated>2017-09-02T00:00:00Z</updated>
+    <published>2017-09-02T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/tetris/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;This isn’t really recent but it worths to be mentionated on this site, about one
+month ago I started reading the &lt;a class=&quot;reference external&quot; href=&quot;https://mitpress.mit.edu/sicp/&quot;&gt;Wizard book&lt;/a&gt; and I became obsessed with this
+fantastic language. The first &lt;em&gt;real&lt;/em&gt; project I tried was this Tetris
+implementation using &lt;a class=&quot;reference external&quot; href=&quot;https://www.gnu.org/software/guile/&quot;&gt;Guile&lt;/a&gt; (yep, his sanctity Stallman should be proud of me),
+the code &lt;span class=&quot;strike&quot;&gt;was&lt;/span&gt; is orrible but it allowed me to discover how to make things
+working pratically. The SICP is a great book but it doesn’t offer any &lt;em&gt;real
+world&lt;/em&gt; example.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://www.andreaciceri.altervista.org/blog/blog/atom.xml">
+    <title type="text">Consonno</title>
+    <id>https://www.andreaciceri.altervista.org/blog/consonno/</id>
+    <updated>2017-08-12T00:00:00Z</updated>
+    <published>2017-08-12T00:00:00Z</published>
+    <link href="https://www.andreaciceri.altervista.org/blog/consonno/" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;p&gt;A bunch of photos of my trip to the ghost town Consonno.&lt;/p&gt;
 </content>
   </entry>
 </feed>

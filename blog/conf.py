@@ -148,7 +148,7 @@ fontawesome_link_cdn = True
 
 # You can enable Disqus_ by setting ``disqus_shortname`` variable.
 # Disqus_ short name for the blog.
-#disqus_shortname = None
+disqus_shortname = "andreaciceri"
 
 # Choose to disqus pages that are not posts, default is ``False``.
 #disqus_pages = False
@@ -169,6 +169,9 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
+    'sphinxcontrib.gist',
+    'sphinxcontrib.youtube',
+    'sphinxcontrib.asciinema',
     'alabaster',
     'ablog',
 ]
@@ -280,6 +283,10 @@ html_theme_path = [alabaster.get_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+#html_css_files = [
+#    '_static/custom.css',
+#]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied

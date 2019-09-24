@@ -1,1 +1,22 @@
-/* This file intentionally left blank. */
+.strike {
+  text-decoration: line-through;
+}
+
+.section > p {
+    text-align: justify;
+}
+
+div.body {
+    min-width: 300px;
+}
+
+@media screen and (max-width: 870px) {
+div.sphinxsidebar {
+    width: 100%;
+    padding: 10px 30px 20px;
+}
+}
+
+.asciicast {
+    text-align: center;
+}
