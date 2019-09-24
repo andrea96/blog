@@ -12,7 +12,6 @@ repo.index.commit("Automatic commit")
 origin = repo.remote(name = "origin")
 origin.push()
 
-'''
 UploadSynchronizer(FsTarget("blog/_website/"),
                    FtpTarget("/blog/",
                              host,
@@ -21,4 +20,3 @@ UploadSynchronizer(FsTarget("blog/_website/"),
                    {"force": False,
                     "delete_unmatched": True,
                     "verbose": 3}).run()
-'''
