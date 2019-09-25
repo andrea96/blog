@@ -3,7 +3,7 @@ SCMRL (SCheMeRogueLike)
 =======================
 
 .. post:: Sep 11, 2017
-   :tags:
+   :tags: scheme, roguelike, ncurses, dijkstra, procedural generation
    :category:
 
 Welcome to *SCMRL* (SCheMeRogueLike, yes I've to choose a more imaginative

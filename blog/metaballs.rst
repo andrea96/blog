@@ -3,7 +3,7 @@ Metaballs and marching cubes
 ============================
 
 .. post:: Dec 19, 2018
-   :tags: atag
+   :tags: javascript, threejs, webgl, metaballs, marching cubes
    :category:
 
 In the last days I started playing with three.js_,

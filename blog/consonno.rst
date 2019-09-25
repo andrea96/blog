@@ -3,7 +3,7 @@ Consonno
 ========
 
 .. post:: Aug 12, 2017
-   :tags:
+   :tags: photography
    :category:
 
 A bunch of photos of my trip to the ghost town Consonno.

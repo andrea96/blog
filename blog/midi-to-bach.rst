@@ -3,7 +3,7 @@ Midi To Bach
 ============
 
 .. post:: Sep 23, 2019
-   :tags:
+   :tags: python, bach, music, midi, moviepy, mido
    :category:
 
 You know these videos on YouTube where someone has recorded himself playing

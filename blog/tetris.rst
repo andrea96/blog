@@ -3,7 +3,7 @@ Vintage tetris written in Guile Scheme
 ======================================
 
 .. post:: Sep 2, 2017
-   :tags:
+   :tags: scheme, tetris, guile, ncurses
    :category: 
 
 .. role:: strike

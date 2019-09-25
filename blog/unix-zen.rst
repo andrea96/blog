@@ -3,7 +3,7 @@ The Zen and the art of the Unix hacking
 =======================================
 
 .. post:: Nov 27, 2017
-   :tags:
+   :tags: linux, unix, zen, dotfiles, archlinux
    :category:
 
 

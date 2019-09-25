@@ -3,7 +3,7 @@ From Brainfuck to Python bytecode
 =================================
 
 .. post:: Aug 27, 2019
-   :tags:
+   :tags: python, compiler, bytecode, brainfuck
    :category:
 
 .. role:: py(code)

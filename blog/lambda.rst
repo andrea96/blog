@@ -3,7 +3,7 @@ Lambda calculus in Javascript
 =============================
 
 .. post:: Mar 31, 2019
-   :tags:
+   :tags: javascript, lambda calculus, functional
    :category:
 
 
