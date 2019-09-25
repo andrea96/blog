@@ -19,7 +19,7 @@ finally:
     origin = repo.remote(name = "origin")
     origin.push()
 
-    BiDirSync(FsTarget("blog/_website/"),
+    BiDirSynchronizer(FsTarget("blog/_website/"),
                       FtpTarget("/blog/",
                                 host,
                                 username = user,
