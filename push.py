@@ -24,5 +24,5 @@ finally:
                                 host,
                                 username = user,
                                 password = password),
-                      {"resolve": "new",
+                      {"resolve": "skip",
                        "verbose": 3}).run()
