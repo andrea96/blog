@@ -9,20 +9,21 @@ from ablog.commands import ablog_build as build
 from credentials import user, password, host
 
 
-#build(sourcedir = "blog/")
+try:
+    build(sourcedir = "blog/")
+finally:
+    repo = Repo(".git")
+    repo.git.add("*")
+    repo.index.commit("Automatic commit - {}"\
+                      .format(datetime.now().strftime("%d/%m/%Y - %H:%M:%S")))
+    origin = repo.remote(name = "origin")
+    origin.push()
 
-repo = Repo(".git")
-repo.git.add("*")
-repo.index.commit("Automatic commit - {}"\
-                  .format(datetime.now().strftime("%d/%m/%Y - %H:%M:%S")))
-origin = repo.remote(name = "origin")
-origin.push()
-
-UploadSynchronizer(FsTarget("blog/_website/"),
-                   FtpTarget("/blog/",
-                             host,
-                             username = user,
-                             password = password),
-                   {"force": False,
-                    "delete_unmatched": True,
-                    "verbose": 3}).run()
+    UploadSynchronizer(FsTarget("blog/_website/"),
+                       FtpTarget("/blog/",
+                                 host,
+                                 username = user,
+                                 password = password),
+                       {"force": False,
+                        "delete_unmatched": True,
+                       "verbose": 3}).run()
