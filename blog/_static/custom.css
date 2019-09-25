@@ -6,10 +6,6 @@
     text-align: justify;
 }
 
-div.body > .section {
-    text-align: justify;
-}
-
 div.body {
     min-width: 300px;
 }
