@@ -19,10 +19,10 @@ finally:
     origin = repo.remote(name = "origin")
     origin.push()
 
-    BiDirSynchronizer(FsTarget("blog/_website/"),
+    BiDirSync(FsTarget("blog/_website/"),
                       FtpTarget("/blog/",
                                 host,
                                 username = user,
                                 password = password),
-                      {"resolve": "delete-unmatched",
+                      {"resolve": "ask",
                        "verbose": 3}).run()
