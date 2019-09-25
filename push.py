@@ -2,7 +2,7 @@
 
 from ftpsync.targets import FsTarget
 from ftpsync.ftp_target import FtpTarget
-from ftpsync.synchronizers import BiDirSynchronizer
+from ftpsync.synchronizers import UploadSynchronizer
 from git import Repo
 from datetime import datetime
 from ablog.commands import ablog_build as build
@@ -19,10 +19,10 @@ finally:
     origin = repo.remote(name = "origin")
     origin.push()
 
-    BiDirSynchronizer(FsTarget("blog/_website/"),
-                      FtpTarget("/blog/",
-                                host,
-                                username = user,
-                                password = password),
-                      {"resolve": "ask",
+    UploadSynchronizer(FsTarget("blog/_website/"),
+                       FtpTarget("/blog/",
+                                 host,
+                                 username = user,
+                                 password = password),
+                       {"resolve": "ask",
                        "verbose": 3}).run()
