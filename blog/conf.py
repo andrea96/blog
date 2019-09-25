@@ -259,7 +259,8 @@ html_theme = 'alabaster'
 html_theme_options = {
     'github_button': False,
     'fixed_sidebar': False,
-    'description': 'My personal blog'
+    'description': 'My personal blog',
+    'analytics_id': '35300499',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
