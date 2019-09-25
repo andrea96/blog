@@ -24,5 +24,5 @@ finally:
                                 host,
                                 username = user,
                                 password = password),
-                      {"resolve": "delete",
+                      {"resolve": "delete-unmatched",
                        "verbose": 3}).run()
