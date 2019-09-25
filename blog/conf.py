@@ -261,6 +261,7 @@ html_theme_options = {
     'fixed_sidebar': False,
     'description': 'My personal blog',
     'analytics_id': '35300499',
+    'sidebar_width': '220px',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
