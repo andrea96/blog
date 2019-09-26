@@ -17,7 +17,9 @@ than this would be difficult, so let's move on.
 
 
 Who am I
--------- I'm a math student who likes programming problems, I think this is a
+--------
+
+I'm a math student who likes programming problems, I think this is a
 good and concise definition compared to what this blog looks like. However I'm
 more than this, I also appreciate a variety of different things like cooking,
 `really nerd videogames`_, free software, music (light or classical, as a
@@ -31,6 +33,7 @@ skills.
 
 Technologies behind this blog
 -----------------------------
+
 This blog is generated using ablog_, a Python tool based on Sphinx_, the
 famous documentation generator. The theme is the simple and clear Alabaster_.
 
