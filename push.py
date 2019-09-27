@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 from ftpsync.targets import FsTarget
 from ftpsync.ftp_target import FtpTarget
 from ftpsync.synchronizers import UploadSynchronizer
@@ -10,19 +11,19 @@ from credentials import user, password, host
 
 
 try:
-    build(sourcedir = "blog/")
+    build(sourcedir="blog/")
 finally:
     repo = Repo(".git")
     repo.git.add("*")
-    repo.index.commit("Automatic commit - {}"\
+    repo.index.commit("Automatic commit - {}"
                       .format(datetime.now().strftime("%d/%m/%Y - %H:%M:%S")))
-    origin = repo.remote(name = "origin")
+    origin = repo.remote(name="origin")
     origin.push()
 
     UploadSynchronizer(FsTarget("blog/_website/"),
                        FtpTarget("/blog/",
                                  host,
-                                 username = user,
-                                 password = password),
+                                 username=user,
+                                 password=password),
                        {"resolve": "ask",
-                       "verbose": 3}).run()
+                        "verbose": 3}).run()

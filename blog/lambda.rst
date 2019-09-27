@@ -82,7 +82,7 @@ A number :math:`n` is simply something that, when called passing a function
 f}_n`, with the convention that :math:`f^0 = id`.
 
 .. math::
-   succ(n) = \lambda n . \lambda f .\lambda x . f(n(f)(x))$$
+   succ(n) = \lambda n . \lambda f .\lambda x . f(n(f)(x))
 
 Now should be obvious what the function :js:`succ` does. Conversely how the
 arithmetic operators have been implemented may not appear such obvious.
