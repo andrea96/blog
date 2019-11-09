@@ -23,13 +23,14 @@ I'm a math student who likes programming problems, I think this is a
 good and concise definition compared to what this blog looks like. However I'm
 more than this, I also appreciate a variety of different things like cooking,
 `really nerd videogames`_, free software, music (light or classical, as a
-listener or as a player), sci-fi books, old and boring movies, etc...
+listener or `as a player`_), sci-fi books, old and boring movies, etc...
 
 Moreover, I'm not an english native speaker, so I ask you to be clement if you
 find some errors, this site is also an opportunity to improve my language
 skills.
 
 .. _`really nerd videogames`: https://www.nethack.org/
+.. _`as a player`: midi-to-bach
 
 Technologies behind this blog
 -----------------------------
@@ -46,7 +47,7 @@ You can find the complete source code in my `Github repository`_.
 .. _ablog: https://ablog.readthedocs.io/
 .. _Sphinx: http://www.sphinx-doc.org
 .. _Alabaster: https://alabaster.readthedocs.io/
-.. _`Github repository`: www.google.it
+.. _`Github repository`: http://www.google.it
 
 
 My last posts

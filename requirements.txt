@@ -5,3 +5,4 @@ sphinxcontrib.asciinema
 pyftpsync
 gitpython
 -e git+https://github.com/sphinx-contrib/youtube.git#egg=sphinxcontrib.youtube
+sphinxcontrib.katex

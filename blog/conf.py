@@ -43,18 +43,18 @@ blog_authors = {
 # links of these languages. Similar to :confval:`blog_authors`, dictionary
 # keys should be used in ``post`` directive to refer to the locations.
 # Default is ``{}``.
-#blog_languages = {
+# blog_languages = {
 #    'en': ('English', None),
-#}
+# }
 
 
 # A dictionary of location names mapping to full display names and
 # links of these locations. Similar to :confval:`blog_authors`, dictionary
 # keys should be used in ``post`` directive to refer to the locations.
 # Default is ``{}``.
-#blog_locations = {
+# blog_locations = {
 #    'Earth': ('The Blue Planet', 'http://en.wikipedia.org/wiki/Earth),
-#}
+# }
 
 
 # -- Blog Post Related --------------------------------------------------------
@@ -98,13 +98,13 @@ post_auto_image = 1
 # In addition, there are authors.html, languages.html, and locations.html
 # sidebars that link to author and location archive pages.
 html_sidebars = {
-    '**': [ 'about.html',
-            'postcard.html', #'navigation.html',
-            'recentposts.html', 'tagcloud.html',
-            'categories.html',  'archives.html',
-            'searchbox.html',
-            ],
-    }
+    '**': ['about.html',
+           'postcard.html',  # 'navigation.html',
+           'recentposts.html', 'tagcloud.html',
+           'categories.html',  'archives.html',
+           'searchbox.html',
+           ],
+}
 
 # -- Blog Feed Options --------------------------------------------------------
 
@@ -172,6 +172,7 @@ extensions = [
     'sphinxcontrib.gist',
     'sphinxcontrib.youtube',
     'sphinxcontrib.asciinema',
+    'sphinxcontrib.katex',
     'alabaster',
     'ablog',
 ]
@@ -262,6 +263,7 @@ html_theme_options = {
     'description': 'My personal blog',
     'analytics_id': '35300499',
     'sidebar_width': '220px',
+    'page_width': '960px',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -288,9 +290,9 @@ html_favicon = "_static/icon.ico"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-#html_css_files = [
+# html_css_files = [
 #    '_static/custom.css',
-#]
+# ]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -351,5 +353,3 @@ html_show_sourcelink = False
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Blogdoc'
-
-
