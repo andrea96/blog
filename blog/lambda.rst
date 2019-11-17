@@ -7,7 +7,7 @@ Lambda calculus in Javascript
    :category:
 
 
-.. The followBing is needed for gists embedding with specifc lines
+.. The following is needed for gists embedding with specifc lines
 .. raw:: html
 
    <script

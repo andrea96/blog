@@ -173,9 +173,11 @@ extensions = [
     'sphinxcontrib.youtube',
     'sphinxcontrib.asciinema',
     'sphinxcontrib.katex',
+    'matplotlib.sphinxext.plot_directive',
     'alabaster',
     'ablog',
 ]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', ablog.get_html_templates_path()]
@@ -218,7 +220,8 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+# These are drafts not reachable from the TOC tree
+exclude_patterns = ['classificazione-lineare-sistemi-dinamici.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -353,3 +356,6 @@ html_show_sourcelink = False
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Blogdoc'
+
+plot_html_show_source_link = False
+plot_html_show_formats = False
