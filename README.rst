@@ -1,4 +1,5 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ef2c3ed3-7f3d-4210-b560-ee459367d608/deploy-status)](https://app.netlify.com/sites/andreaciceri/deploys)
+.. image:: https://api.netlify.com/api/v1/badges/ef2c3ed3-7f3d-4210-b560-ee459367d608/deploy-status
+   :target: https://app.netlify.com/sites/andreaciceri/deploys
 
 My blog
 =======
