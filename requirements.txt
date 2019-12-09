@@ -1,4 +1,4 @@
-ablog
+blog
 watchdog
 sphinxcontrib.gist
 sphinxcontrib.asciinema

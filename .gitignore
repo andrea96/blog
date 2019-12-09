@@ -103,8 +103,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Important: file containing credentials
-credentials.py
-
 _website/
 .doctrees/

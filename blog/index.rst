@@ -38,16 +38,19 @@ Technologies behind this blog
 This blog is generated using ablog_, a Python tool based on Sphinx_, the
 famous documentation generator. The theme is the simple and clear Alabaster_.
 
-I completely automated the deployment, which is simultaneously done on Github
-for the sources of the post (written in reStructuredText) and on my FTP server
-for the generated files.
+I completely automated the deployment using netlify_, which builds the blog at
+every new commit on the main branch of the repository and hosts the generated
+contents. The posts are written in a plain reStructuredText using Emacs, I
+reserve the right to insert some extra Javascript or CSS in some posts, as I
+already did. 
 
 You can find the complete source code in my `Github repository`_.
 
 .. _ablog: https://ablog.readthedocs.io/
 .. _Sphinx: http://www.sphinx-doc.org
 .. _Alabaster: https://alabaster.readthedocs.io/
-.. _`Github repository`: http://www.google.it
+.. _`Github repository`: http://www.github.com/andrea96/blog/
+.. _netlify: https://www.netlify.com/
 
 
 My last posts

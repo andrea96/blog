@@ -1,0 +1,4 @@
+[build]
+  base = "blog/"
+  publish = "_website/"
+  command = "ablog build"

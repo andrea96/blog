@@ -23,7 +23,7 @@ blog_title = u'Blog Blog'
 
 # Base URL for the website, required for generating feeds.
 # e.g. blog_baseurl = "http://example.com/"
-blog_baseurl = u'https://www.andreaciceri.altervista.org/blog/'
+blog_baseurl = u'https://andreaciceri.netlify/'
 
 # Choose to archive only post titles. Archiving only titles can speed
 # up project building.
