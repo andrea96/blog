@@ -2,6 +2,5 @@ ablog
 watchdog
 sphinxcontrib.gist
 sphinxcontrib.asciinema
--e git+https://github.com/sphinx-contrib/youtube.git#egg=sphinxcontrib.youtube
 sphinxcontrib.katex
 matplotlib
