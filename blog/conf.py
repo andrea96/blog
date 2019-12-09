@@ -165,12 +165,15 @@ needs_sphinx = '1.2'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+sys.path.append(os.path.abspath("./_ext"))  # custom extensions in _ext/
+
 extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinxcontrib.gist',
-    # 'sphinxcontrib.youtube',
+    'youtube',
     'sphinxcontrib.asciinema',
     'sphinxcontrib.katex',
     'matplotlib.sphinxext.plot_directive',
@@ -221,7 +224,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # These are drafts not reachable from the TOC tree
-exclude_patterns = ['classificazione-lineare-sistemi-dinamici.rst']
+exclude_patterns = ['404.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

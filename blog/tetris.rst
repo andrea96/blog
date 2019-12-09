@@ -42,7 +42,7 @@ YouTube:
 I know I shouldn't upload code so bad but I really enjoyed writing it and I'm
 afraid of losing it in the future, so...
 
-.. gist:: e8c6a7281b9144fae308db2324dbc519
+.. gist:: https://gist.github.com/andrea96/e8c6a7281b9144fae308db2324dbc519
 
 .. _`Wizard book`: https://mitpress.mit.edu/sicp/
 .. _Guile: https://www.gnu.org/software/guile/
