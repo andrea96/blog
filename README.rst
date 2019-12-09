@@ -12,9 +12,9 @@ Requirements
 
 All the packages needed for the blog building and deployment are inside the
 :code:`requirements.txt` file. There is a problem with `sphinxcontrib.youtube`,
-the `official one`_ downloadable with `pip`, which is not working with Pytohn 3,
+the `official one`_ downloadable with `pip`, which is not working with Python 3,
 but as I wanted to use it I added the custom extension inside
-:code:`blog/_ext/youtube.py` taking the code from `here`_.
+`blog/_ext/youtube.py`_ taking the code from `here`_.
 
 I also added a custom extension wrote by me which adds the directive
 :code:`::gistlines::`, it allows to include sources from `Gist`_ setting the
@@ -27,8 +27,8 @@ including `gist-embed`_. However I'm also using the standard
 .. _`gist-embed`: https://www.npmjs.com/package/gist-embed
 .. _`Gist`: https://gist.github.com/
 
-Building
---------
+Creating contents and building
+------------------------------
 
 It's possible to add a post with the command :code:`ablog post <title>` and then
 modifyng the created :code:`<title>.rst` file, the command :code:`ablog serve
@@ -36,8 +36,8 @@ modifyng the created :code:`<title>.rst` file, the command :code:`ablog serve
 updated blog.
 
 To publish the post the command is simply :code:`push.py`, it builds and put the
-generated contents inside the folder :code:`_website/`. At every commit on the
-main branch of this repository, the website is automatically built and hosted by
+generated contents inside the folder `_website/`. At every commit on the main
+branch of this repository, the website is automatically built and hosted by
 `Netlify`_.
 
 .. _`Netlify`: https://netlify.com/
