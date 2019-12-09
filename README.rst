@@ -28,7 +28,8 @@ including `gist-embed`_. However I'm also using the standard
 .. _`gist-embed`: https://www.npmjs.com/package/gist-embed
 .. _`Gist`: https://gist.github.com/
 
-Creating contents and building ------------------------------
+Creating contents and building
+------------------------------
 
 It's possible to add a post with the command :code:`ablog post <title>` and then
 modifyng the created :code:`<title>.rst` file, the command :code:`ablog serve
