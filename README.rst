@@ -12,10 +12,11 @@ Requirements
 ------------
 
 All the packages needed for the blog building and deployment are inside the
-:code:`requirements.txt` file. There is a problem with `sphinxcontrib.youtube`,
-the `official one`_ downloadable with `pip`, which is not working with Python 3,
-but as I wanted to use it I added the custom extension inside
-`blog/_ext/youtube.py <blog/_ext/youtube.py>`_ taking the code from `here`_.
+:code:`requirements.txt` file. There is a problem with
+:code:`sphinxcontrib.youtube`, the `official one`_ downloadable with `pip`,
+which is not working with Python 3, but as I wanted to use it I added the custom
+extension inside `blog/_ext/youtube.py <blog/_ext/youtube.py>`_ taking the code
+from `here`_.
 
 I also added a custom extension wrote by me which adds the directive
 :code:`::gistlines::`, it allows to include sources from `Gist`_ setting the
