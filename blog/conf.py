@@ -170,7 +170,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinxcontrib.gist',
-    'sphinxcontrib.youtube',
+    # 'sphinxcontrib.youtube',
     'sphinxcontrib.asciinema',
     'sphinxcontrib.katex',
     'matplotlib.sphinxext.plot_directive',
