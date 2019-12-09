@@ -2,3 +2,8 @@
   base = "."
   publish = "blog/_website/"
   command = "cd blog/ && ablog build"
+
+[[redirects]]
+  from = "/*"
+  to = "/404/"
+  status = 404
