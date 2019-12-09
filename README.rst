@@ -1,28 +1,43 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ef2c3ed3-7f3d-4210-b560-ee459367d608/deploy-status)](https://app.netlify.com/sites/andreaciceri/deploys)
+
 My blog
 =======
+This is the repository of my blog, which collects different contents. The
+website is actually visitable at `this address`_.
+
+.. _`this address`: https://andreaciceri.netlify.com/
+
+Requirements
+------------
 
 All the packages needed for the blog building and deployment are inside the
 :code:`requirements.txt` file. There is a problem with `sphinxcontrib.youtube`,
 the `official one`_ downloadable with `pip`, which is not working with Pytohn 3,
-so I'm using `this one`_.
+but as I wanted to use it I added the custom extension inside
+:code:`blog/_ext/youtube.py` taking the code from `here`_.
 
-.. _`official one`: https://pypi.org/project/sphinxcontrib.youtube/
-.. _`this one`: https://github.com/sphinx-contrib/youtube
+I also added a custom extension wrote by me which adds the directive
+:code:`::gistlines::`, it allows to include sources from `Gist`_ setting the
+lines range, it works simply adding a :code:`<code>` element to the DOM and
+including `gist-embed`_. However I'm also using the standard
+`sphinxcontrib.gist` where this is not needed.
 
+.. _`Official one`: https://pypi.org/project/sphinxcontrib.youtube/
+.. _`here`: https://github.com/sphinx-contrib/youtube
+.. _`gist-embed`: https://www.npmjs.com/package/gist-embed
+.. _`Gist`: https://gist.github.com/
 
-Moreover it's necessary the file :code:`credentials.py`, wich is in the
-:code:`.gitignore` for obvious reasons, this file must match this format:
-
-.. code:: python
-
-  user = 'myUserName' password = 'myPassword' host = 'myFtpHost'
-
+Building
+--------
 
 It's possible to add a post with the command :code:`ablog post <title>` and then
 modifyng the created :code:`<title>.rst` file, the command :code:`ablog serve
 -r` starts a web server at :code:`http://localhost:8000/` with the realtime
 updated blog.
 
-To publish the post the command is simply :code:`push.py`, it builds, creates
-and pushes a commit on this repo and then mirrors the folder :code:`_website`
-with the ftp server.
+To publish the post the command is simply :code:`push.py`, it builds and put the
+generated contents inside the folder :code:`_website/`. At every commit on the
+main branch of this repository, the website is automatically built and hosted by
+`Netlify`_.
+
+.. _`Netlify`: https://netlify.com/

@@ -174,6 +174,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.gist',
     'youtube',
+    'gistlines',
     'sphinxcontrib.asciinema',
     'sphinxcontrib.katex',
     'matplotlib.sphinxext.plot_directive',

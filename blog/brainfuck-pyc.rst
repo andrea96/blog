@@ -9,11 +9,15 @@ From Brainfuck to Python bytecode
 .. role:: py(code)
    :language: python
 
-.. The followBing is needed for gists embedding with specifc lines
-.. raw:: html
 
-   <script src=https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js></script>
+.. note::
+   When I wrote this post (and the script) the last Python version was 3.7, due
+   of its low-level nature, the program no longer works with newer versions.
+   However it should be simple to update it (starting from, for example,
+   changing the magic number) or even better, using `this library
+   <https://pypi.org/project/bytecode/>`_.
 
+   
 About one month ago I wrote this_ simple transpiler from Brainfuck_ to Python
 bytecode. I'm going to assume you already can "program" in Brainfuck, otherwise
 I advise you to read the `dedicated page on Esolang`_, in my opinion the best
@@ -42,10 +46,9 @@ of the `cli parser`_, the interesting part starts with the :py:`parse` function.
 .. _`this source`: https://github.com/python/cpython/blob/master/Python/ceval.c
 .. _`cli parser`: https://docs.python.org/3.7/library/argparse.html
 
-.. raw:: html
-
-   <code data-gist-id="913aa9667d89af8e2ab45e99e557c2aa"
-   data-gist-hide-footer="true" data-gist-line="50-88"></code>
+.. gistlines:: 913aa9667d89af8e2ab45e99e557c2aa
+   :footer: false
+   :lines: 50-88
 
 That function creates the abstract syntax tree, which is a bit overkill as word
 because it simply returns a list of lists where the elements can be "[", "]",
@@ -57,10 +60,9 @@ would be possible to simplify also "<" and ">" but I was too lazy.
 The :py:`visit` function simply depth visits the abstract syntax tree applying
 the visitor function for every element of the tree.
 
-.. raw:: html
-
-   <code data-gist-id="913aa9667d89af8e2ab45e99e557c2aa"
-   data-gist-hide-footer="true" data-gist-line="90-95"></code>
+.. gistlines:: 913aa9667d89af8e2ab45e99e557c2aa
+   :footer: false
+   :lines: 90-95
 
 Then it's created a :py:`bytearray` object called :py:`instructions` containing
 some instructions for the stack machine (every instruction is 2 bytes long),
@@ -79,11 +81,9 @@ and then 6 :py:`NOP` instructions are added to the program so that when the in
 the second branch "]" is met, it's possible to change the :py:`NOP` instructions
 to manage the :py:`JUMP` instruction.
 
-
-.. raw:: html
-
-   <code data-gist-id="913aa9667d89af8e2ab45e99e557c2aa"
-   data-gist-hide-footer="true" data-gist-line="195-232"></code>
+.. gistlines:: 913aa9667d89af8e2ab45e99e557c2aa
+   :footer: false
+   :lines: 195-232
 
 Here the parsing and the visiting (i.e. the :py:`instructions` creation) are
 done, then two last instructions are added, they basically let the program

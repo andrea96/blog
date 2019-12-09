@@ -7,18 +7,13 @@ Lambda calculus in Javascript
    :category:
 
 
-.. The following is needed for gists embedding with specifc lines
-.. raw:: html
-
-   <script
-   src=https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js></script>
-
 .. role:: js(code)
    :language: javascript
 
 .. role:: lisp(code)
    :language: lisp
 
+	      
 This sunday I enjoyed creating some simple functions using only the `lambda
 calculus`_, I chose to use Javascript because of the simple syntax for the
 lambda functions. In substance in javscript it's simple to translate something
@@ -31,10 +26,9 @@ I started defining the boolean values true and false:
 .. math::
    T = \lambda x . \lambda y . x \qquad F = \lambda x . \lambda y . y
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="1-2"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 1-2
 
 This explicit parenthesization is not necessary but I preferred to exaggerate
 rather than making the code even more obfuscated. I'm going to follow this
@@ -44,10 +38,9 @@ choice in the whole source. The purpose of this definition is clarified by the
 .. math::
    \lambda cond . \lambda a . \lambda b . cond \; a \; b
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="3"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 3
 
 The lists are created consing nodes recursively, a *node* is a *pair* (i.e. a
 *cons* of two "things") where:
@@ -61,10 +54,9 @@ Using a lisp-like syntax what I'm saying is that the list :js:`[1, 2, 3]` is
 something like :lisp:`(cons (node 1) (cons (node 2) (cons (node 3) nil)))` where
 `(node a)` is `(cons F a)`. In code:
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="5-10"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 5-10
 
 And now something a little more interesting; the natural numbers! This
 construction remembers the inductive definition by Peano.
@@ -72,10 +64,9 @@ construction remembers the inductive definition by Peano.
 .. math::
    \begin{align*} 0 &= \lambda f . \lambda x . x\\ 1 &= \lambda f . \lambda x . f x\\ 2 &= \lambda f . \lambda x . f(f x)\\ \vdots \\ n &= \lambda f . \lambda x \; \underbrace{f(\dots f(f(}_{n} n) \end{align*}
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="12-18"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 12-18
 
 A number :math:`n` is simply something that, when called passing a function
 :math:`f` return the composition :math:`\underbrace{f \circ f \circ \dots \circ
@@ -87,10 +78,9 @@ f}_n`, with the convention that :math:`f^0 = id`.
 Now should be obvious what the function :js:`succ` does. Conversely how the
 arithmetic operators have been implemented may not appear such obvious.
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="20-26"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 20-26
 
 I suggest to equip yourself with paper and pen, I personally had some difficult
 untangling these lambdas. An really nice place where to learn how this functions
@@ -107,10 +97,9 @@ subtraction without :js:`pred` wouldn't have benn easy.
 The next logic operators and the comparator of numbers are easy to understand,
 it's sufficient the remember what a boolean value and a number really are.
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="28-35"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 28-35
 
 Last but not least the the factorial function! Implemented without the infamous
 `Y combinator`_, that should merit a whole post only for itself. (maybe in the
@@ -118,10 +107,9 @@ future)
 
 .. _`Y combinator`: https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus 
 
-.. raw:: html
-
-   <code data-gist-id="2806686fbb7103927da61b2a4d90afed"
-   data-gist-hide-footer="true" data-gist-line="37"></code>
+.. gistlines:: 2806686fbb7103927da61b2a4d90afed
+   :footer: false
+   :lines: 37
 
 And now feel free to play with this code directly in this page, for example you
 can try to calcolate the factorial of :math:`7` whith
