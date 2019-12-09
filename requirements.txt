@@ -2,7 +2,6 @@ blog
 watchdog
 sphinxcontrib.gist
 sphinxcontrib.asciinema
-pyftpsync
--e git+https://github.com/sphinx-contrib/youtube.git#egg=sphinxcontrib.youtube
+sphinxcontrib.youtube
 sphinxcontrib.katex
 matplotlib
