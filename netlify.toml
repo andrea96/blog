@@ -1,7 +1,7 @@
 [build]
-  base = "blog/"
+  base = "."
   publish = "blog/_website/"
-  command = "ablog build && cd .. && python compress.py"
+  command = "cd blog/ && ablog build && cd .. && python compress.py"
 
 [[redirects]]
   from = "/*"
