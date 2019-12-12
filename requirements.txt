@@ -4,3 +4,7 @@ sphinxcontrib.gist
 sphinxcontrib.asciinema
 sphinxcontrib.katex
 matplotlib
+
+htmlmin
+csscompressor
+rjsmin

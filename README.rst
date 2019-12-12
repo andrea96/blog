@@ -37,9 +37,12 @@ modifyng the created :code:`<title>.rst` file, the command :code:`ablog serve
 -r` starts a web server at :code:`http://localhost:8000/` with the realtime
 updated blog.
 
-To publish the post the command is simply :code:`push.py`, it builds and put the
-generated contents inside the folder `_website/ <website/>`_. At every commit on
-the main branch of this repository, the website is automatically built and
-hosted by `Netlify`_.
+To publish the post it's enough to push the commit with the new file on the
+:code:`master` branch, the building process will automatically start.
+Substantially Netifly is triggered when the repository is updated and it
+executes the command :code:`ablog build` which builds the site and put the
+generated contents inside the folder `_website/ <website/>`_. Then it executes
+the python script `compress.py <compress.py>`_ which try to minify the files in
+:code:`_website`. At the end Netifly hosts the whole folder.
 
 .. _`Netlify`: https://netlify.com/
