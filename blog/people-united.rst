@@ -12,7 +12,16 @@ defeated`_ by `Frederic Rzweski`_.
 The piece is a set of 36 variations on the Chilean song "¡El pueblo unido jamás
 será vencido!" by Sergio Ortega and Quilapayún. It's impossible not to see a
 certain resemblance with the `Goldberg variations`_ by *J. S. Bach*.
-Indeed, for example, the main theme on which the variations are built is played
+Indeed, for example, the main theme on which the variations are built
+is played again at the end of the variations, exactly as in the
+Goldberg variations. Moreover the whole composition is full of
+recursive patterns, e.g. the 36 variations are grouped by groups of
+six and the latest variations of the first five groups sum up the the
+first five variations of these five groups. At the end, in the last
+group, the fist five variations sum up the latest variations of the
+first five groups and the last variation sums up the first five variations
+in the last group, in this way, the last variation contains all the
+thirtyfive previous variations. A job worthy of Bach or Escher!
 
 
 .. _`The people united will never be defeated`: https://en.wikipedia.org/wiki/The_People_United_Will_Never_Be_Defeated!
