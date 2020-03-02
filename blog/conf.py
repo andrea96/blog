@@ -173,6 +173,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinxcontrib.gist',
+    'sphinxcontrib.proof',
     'youtube',
     'gistlines',
     'sphinxcontrib.asciinema',
@@ -297,9 +298,9 @@ html_favicon = "_static/icon.ico"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# html_css_files = [
-#    '_static/custom.css',
-# ]
+html_css_files = [
+    'sphinxcontrib-proof.css',
+]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -363,3 +364,44 @@ htmlhelp_basename = 'Blogdoc'
 
 plot_html_show_source_link = False
 plot_html_show_formats = False
+
+
+proof_theorem_types = {
+    "algorithm": "Algoritmo",
+    "conjecture": "Congettura",
+    "corollary": "Corollario",
+    "definition": "Definizione",
+    "example": "Esempio",
+    "lemma": "Lemma",
+    "observation": "Osservazione",
+    "proof": "Dimostrazione",
+    "property": "Proprietá",
+    "theorem": "Teorema",
+
+    "def": "Definizione",
+    "oss": "Osservazione",
+    "prop": "Proposizione",
+    "teo": "Teorema",
+    "lemma": "Lemma",
+    "dim": "Dimostrazione",
+}
+
+proof_html_title_template_visit = '''
+<div class="proof-title">
+   <b>{{ thmtype }}</b>
+    {% if title %}
+        (
+    {%- endif -%}
+'''
+
+proof_html_title_template_depart = '''
+    {%- if title -%}
+        )
+    {% endif %}
+</div>
+'''
+
+katex_options = r'''macros: {
+        "\\floor": "\\lfloor#1\\rfloor",
+        "\\ceil": "\\lceil#1\\rceil",
+    }'''

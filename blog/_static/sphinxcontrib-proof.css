@@ -1,0 +1,10 @@
+.proof {
+    margin: 1em 0em;
+    background-color: #eee;
+    padding: 0.1em 0.5em;
+}
+
+.proof-title {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+}

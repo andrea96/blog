@@ -3,6 +3,7 @@ watchdog
 sphinxcontrib.gist
 sphinxcontrib.asciinema
 sphinxcontrib.katex
+sphinxcontrib.proof
 matplotlib
 
 htmlmin

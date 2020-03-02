@@ -39,7 +39,6 @@ quality. I have to say that I'm pleasantly impressed by the low background
 noise. I've used Audacity_ to record the audio and Openshot_ to put put together
 the audio and the video.
 
-
 It would have been cool to save the midi and then synthetize the audio, however
 I had no fortune finding a good open source application to do that, I tried
 FluidSynth with different soundfonts but the internal synthetizer of the piano
