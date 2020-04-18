@@ -178,7 +178,6 @@ extensions = [
     'gistlines',
     'sphinxcontrib.asciinema',
     'sphinxcontrib.katex',
-    'matplotlib.sphinxext.plot_directive',
     'alabaster',
     'ablog',
 ]
