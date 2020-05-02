@@ -1,0 +1,8 @@
+language: nix
+script: nix-shell --command blog-build
+cache:
+  directories:
+  - $HOME/nix.store
+branches:
+  only:
+  - travis-test
