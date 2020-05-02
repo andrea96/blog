@@ -1,4 +1,3 @@
-(require 'use-package)
 (require 'org)
 (require 'ox-publish)
 (use-package 'htmlize)
