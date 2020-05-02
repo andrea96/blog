@@ -1,9 +1,7 @@
-(require 'package)
-(package-initialize)
-
+(require 'use-package)
 (require 'org)
 (require 'ox-publish)
-(require 'htmlize)
+(use-package 'htmlize)
 (require 'ox-html)
 (require 'ox-rss)
 (require 'ox-reveal)
