@@ -1,9 +1,0 @@
-[build]
-  base = "."
-  publish = "blog/_website/"
-  command = "cd blog/ && ablog build && cd .. && python compress.py"
-
-[[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404

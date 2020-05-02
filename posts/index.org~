@@ -1,0 +1,4 @@
+#+TITLE: Blog Index
+
+- *[[file:demo][Demo post]]*
+  #+html: <p class='pubdate'>by nil on May 02, 2020.</p>

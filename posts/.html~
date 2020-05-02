@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- May 02, 2020 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog Index</title>
+<meta name="generator" content="Org mode">
+
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<link rel='stylesheet' href='/css/asciinema-player.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<script src='js/asciinema-player.js'></script>
+<script src='js/darkmode-js.min.js'></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<ul class='horizontal-menu'><li><a href='#'>About</a></li><li><a href='#'>Posts</a></li><li><a href='#'>Github</a></li><li><a href='#'>Rss</a></li></ul>
+</header>
+<main id="content">
+<header>
+<h1 class="title">Blog Index</h1>
+</header><ul class="org-ul">
+<li><p>
+<b><a href="lojban.html">lojban</a></b>
+</p>
+<p class='pubdate'>by nil on May 01, 2020.</p></li>
+<li><p>
+<b><a href="hello.html">Sample Post</a></b>
+</p>
+<p class='pubdate'>by John Doe on Feb 05, 2020.</p></li>
+</ul>
+</main>
+<footer id="postamble" class="status">
+<ul class='vertical-menu'><li><a href='#'>About</a></li><li><a href='#'>Posts</a></li><li><a href='#'>Github</a></li><li><a href='#'>Rss</a></li></ul>
+<a href='javascript:darkmode.toggle();'>Toggle</a> the dark mode<br>
+Copyright © 2020 <a href='mailto:andrea.ciceri@autistici.org'>Andrea Ciceri</a><br>
+Last updated on May 02, 2020 using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.91 (<a href="https://orgmode.org">Org</a> mode 9.3.6)
+
+<script>
+const darkmode =  new Darkmode();
+darkmode.toggle();
+</script>
+</footer>
+</body>
+</html>
