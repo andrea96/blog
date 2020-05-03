@@ -1,5 +1,5 @@
 language: nix
-script: nix-shell --pure --command "export TRAVIS_COMMIT='$TRAVIS_COMMIT'; blog-deploy"
+script: nix-shell --pure --command "export TRAVIS_COMMIT='$TRAVIS_COMMIT'; export CI=$CI; blog-deploy"
 cache:
   directories:
   - "$HOME/nix.store"
