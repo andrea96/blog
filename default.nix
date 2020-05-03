@@ -27,12 +27,19 @@ let
   blog-deploy = pkgs.writeShellScriptBin "blog-deploy"
     ''
       blog-build
+      [ $CI ] && blog-backup
       ${pkgs.rsync}/bin/rsync -avz --delete -e "${pkgs.openssh}/bin/ssh -F /dev/null -o 'StrictHostKeyChecking no' -i /tmp/deploy_rsa" public/ andrea@cc0.tech:~/www/ 
+    '';
+  blog-backup = pkgs.writeShellScriptBin "blog-backup"
+    ''
+      filename="blog-$TRAVIS_COMMIT.tar.gz"
+      tar -czvf $filename public/
+      mv $filename public/
     '';
 in
 stdenv.mkDerivation rec {
   name = "blog";
 
-  buildInputs = [ blog-build blog-serve blog-deploy ];
+  buildInputs = [ blog-build blog-serve blog-deploy blog-backup ];
 }
 
