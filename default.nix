@@ -26,7 +26,7 @@ let
     '';
   blog-deploy = pkgs.writeShellScriptBin "blog-deploy"
     ''
-      echo "test" > test.txt
+      blog-build
       ${pkgs.rsync}/bin/rsync -avz --delete -e "${pkgs.openssh}/bin/ssh -F /dev/null -o 'StrictHostKeyChecking no' -i /tmp/deploy_rsa" public/ andrea@cc0.tech:~/www/ 
     '';
 in
