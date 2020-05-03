@@ -1,9 +1,8 @@
 (require 'org)
 (require 'ox-publish)
-(use-package 'htmlize)
+(require 'htmlize)
 (require 'ox-html)
 (require 'ox-rss)
-(require 'ox-reveal)
 
 (setq org-export-with-section-numbers nil
       org-export-with-smart-quotes t

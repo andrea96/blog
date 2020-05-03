@@ -1,10 +1,23 @@
-with import <nixpkgs> {};
+with import <nixpkgs> {
+ overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    }))
+  ];
+};
 
 let
+  customEmacs = (emacsWithPackagesFromUsePackage {
+    config = builtins.readFile ./publish.el;
+    package = pkgs.emacs;
+    extraEmacsPackages = epkgs: [
+      epkgs.htmlize
+    ];
+  });
   blog-build = pkgs.writeShellScriptBin "blog-build"
     ''
       rm -Rf public/
-      ${pkgs.emacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all        
+      ${customEmacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all        
     '';
   blog-serve = pkgs.writeShellScriptBin "blog-serve"
     ''
@@ -16,3 +29,4 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ blog-build blog-serve ];
 }
+
