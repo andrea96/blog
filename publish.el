@@ -4,6 +4,8 @@
 (require 'ox-html)
 (require 'ox-rss)
 
+(setq travis-commit (getenv "TRAVIS_COMMIT"))
+
 (setq org-export-with-section-numbers nil
       org-export-with-smart-quotes t
       org-export-with-toc nil)
@@ -57,11 +59,12 @@
   (format "<ul class='horizontal-menu'>%s</ul>" menu-entries))
 
 (defvar psachin-website-html-postamble (concat
-(format "<ul class='vertical-menu'>%s</ul>" menu-entries)
+					(format "<ul class='vertical-menu'>%s</ul>" menu-entries)
+(format "Commit: %s<br>" travis-commit)				      
 "
 <a href='javascript:darkmode.toggle();'>Toggle</a> the dark mode<br>
 Copyright © 2020 <a href='mailto:andrea.ciceri@autistici.org'>Andrea Ciceri</a><br>
-Last updated on %C using %c
+Last updated on %C using %c<br>
 
 <script>
 const darkmode =  new Darkmode();

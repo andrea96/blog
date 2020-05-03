@@ -17,8 +17,7 @@ let
   });
   blog-build = pkgs.writeShellScriptBin "blog-build"
     ''
-      rm -Rf public/
-      rm -Rf ~/.org-timestamps/
+      [ ! $CI ] && rm -Rf public/ ~/.org-timestamps/
       ${customEmacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all        
     '';
   blog-serve = pkgs.writeShellScriptBin "blog-serve"
