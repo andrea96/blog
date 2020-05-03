@@ -1,5 +1,5 @@
 language: nix
-script: nix-shell --command blog-build
+script: nix-shell --pure --command blog-build
 cache:
   directories:
   - $HOME/nix.store

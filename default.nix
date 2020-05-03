@@ -12,6 +12,7 @@ let
     package = pkgs.emacs;
     extraEmacsPackages = epkgs: [
       epkgs.htmlize
+      epkgs.org-plus-contrib
     ];
   });
   blog-build = pkgs.writeShellScriptBin "blog-build"
