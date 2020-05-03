@@ -33,6 +33,6 @@ in
 stdenv.mkDerivation rec {
   name = "blog";
 
-  buildInputs = [ openssl openssh blog-build blog-serve blog-deploy ];
+  buildInputs = [ blog-build blog-serve blog-deploy ];
 }
 
