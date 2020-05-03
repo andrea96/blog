@@ -9,7 +9,7 @@ with import <nixpkgs> {
 let
   customEmacs = (emacsWithPackagesFromUsePackage {
     config = builtins.readFile ./publish.el;
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacs;
     extraEmacsPackages = epkgs: [
       epkgs.htmlize
       epkgs.org-plus-contrib
