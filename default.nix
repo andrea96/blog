@@ -24,10 +24,19 @@ let
     ''
       ${pkgs.python3}/bin/python -m http.server --directory=public/ 8080
     '';
+  blog-ssh = pkgs.writeShellScriptBin "blog-deploy"
+    ''
+      ${pkgs.openssl}/bin/openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out deploy_rsa -d
+      eval "$(ssh-agent -s)"
+      chmod 600 /tmp/deploy_rsa
+      ssh-add /tmp/deploy_rsa
+      echo "test" > test.txt
+      ${pkgs.openssh}/bin/scp test.txt andrea@cc0.tech:~/www/ 
+    '';
 in
 stdenv.mkDerivation rec {
   name = "blog";
 
-  buildInputs = [ blog-build blog-serve ];
+  buildInputs = [ openssl openssh blog-build blog-serve ];
 }
 
