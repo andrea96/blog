@@ -27,7 +27,7 @@ let
   blog-deploy = pkgs.writeShellScriptBin "blog-deploy"
     ''
       echo "test" > test.txt
-      ${pkgs.openssh}/bin/scp test.txt andrea@cc0.tech:~/www/ 
+      ${pkgs.rsync}/bin/rsync -avz -e "{pkgs.openssh}/bin/ssh -i /tmp/deploy_rsa" test.txt andrea@cc0.tech:~/www/ 
     '';
 in
 stdenv.mkDerivation rec {
