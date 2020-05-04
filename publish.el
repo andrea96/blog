@@ -16,6 +16,9 @@
 	      entries
 	      ""))
 
+(defmacro badge-to-html (link img)
+  (format "<a href='%s'><img src='%s' /></a>" link img))
+
 
 ;; Blog settings
 (setq-default blog-commit (getenv "TRAVIS_COMMIT") "No commit")
@@ -24,7 +27,7 @@
       blog-author "Andrea Ciceri"
       blog-email "andrea.ciceri@autistici.org"
       blog-github "https://github.com/andrea96/"
-      blog-fingerprint "7A66 EEA1 E6C5 98D0 7D36<br>1287 A1FC 8953 2D1C 5654"
+      blog-fingerprint "7A66 EEA1 E6C5 98D0 7D36 1287 A1FC 8953 2D1C 5654"
       blog-menu '(("About" . "/")
 		  ("Posts" . "/posts/")
 		  ("Github" . blog-github)
@@ -78,14 +81,14 @@ Your browser does not support the video tag.
       (concat
        (format "<ul class='vertical-menu'>%s</ul>"
 	       (entries-to-html blog-menu))
-       (format "Commit: %s<br>" blog-commit) "
-<a href='javascript:darkmode.toggle();'>Toggle</a> the dark mode<br>
-Copyright © 2020 <a href='mailto:andrea.ciceri@autistici.org'>Andrea Ciceri</a><br>
-Last updated on %C using %c<br>
-<script>
-const darkmode =  new Darkmode();
-</script>
-"))
+       "Contact me at <a href='mailto:andrea.ciceri@autistici.org'>andrea.ciceri@autistici.org</a><br>"
+       (format "My <a href='#'>public key</a> and its fingerprint: %s<br>" blog-fingerprint)
+       "<a href=''>Built</a> by <a href='#'>Travis</a> and <a href='#'>Nix</a> on %C<br>"
+       (format "Commit: %s<br>" blog-commit)
+       "Powered by %c<br>"
+       "<a href='javascript:darkmode.toggle();'>Toggle</a> the dark mode<br>"
+       "<script>const darkmode =  new Darkmode();</script>"
+       ))
 
 (defun blog-sitemap-format-entry (entry style project)
   "Format posts with author and published data in the index page.

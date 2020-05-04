@@ -71,7 +71,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     margin: 0 auto;
 }
 
-p, li, ul {
+p, li {
     text-align: justify;
     font-size: 1.2em;
     word-wrap: break-word;
@@ -93,6 +93,19 @@ figure > img {
 
 figure > figcaption {
     text-align: center;
+}
+
+.note, .warning {
+    marign: 1em 0;
+    padding: 0 1em;
+}
+
+.note {
+    border: 1px solid #ccc;
+}
+
+.warning {
+    border: 1px solid #f44;
 }
 
 video {
@@ -118,6 +131,7 @@ caption.t-bottom {
 .MathJax:focus, .mjx-chtml:focus, .MathJax_SVG:focus {
     border: 1px solid var(--color-onyx);
 }
+
 .youtube-wrapper {
     padding-bottom: 56.250000%;
     position: relative;
@@ -135,9 +149,11 @@ caption.t-bottom {
 
 
 #postamble {
-    border-top: 1px solid var(--color-onyx);
-    text-align: center;
-    padding: 0.5em 0;
+    border-top: 1px solid #ccc;
+    padding: 1em 1em;
+    background-color: var(--color-onyx);
+    color: #ccc;
+    margin-top: 5em;
 }
 
 .vertical-menu {
@@ -164,7 +180,7 @@ caption.t-bottom {
 	margin: 1em 0;
     }
 
-    pi, li, ul {
+    p, li {
 	font-size: 1em;
     }
 }

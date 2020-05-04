@@ -8,6 +8,8 @@
 Si può inserire il testo in *grassetto*, /italico/ e */grassetto e italico/*, inoltre il testo può
 essere testo ~inline~ o =verbatim=, _sottolineato_, +barrato+ e a ped_{ice} o api^{ice}. 
 
+** Le liste sono testo
+
 Questa è una lista non ordinata...
 
 + Un elemento
@@ -22,6 +24,8 @@ Questa è una lista non ordinata...
    - Seconda parte
 3. Terzo
 4. Quarto
+
+*** E le checklist sono liste
 
 E per le checklist?
 
