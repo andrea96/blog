@@ -1,13 +1,25 @@
-#+title: About
-#+keywords: about
+#+title: This website
 
-#+ATTR_HTML: :class center no-border
-#+ATTR_HTML: :width 40% :height
-[[file:../../images/about/profile.png]]
+Welcome to my blog, let $\Sigma$ be the set of the Unicode symbols, then this site is a finite subset
+$\mathbb{B} \subset \Sigma$.
+Assuming that your browser can parse and interpret $\mathbb{B}$, and hoping that you find it more
+interesting than a generic subset, I wish you a pleasant navigation.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+The content of this blog is heterogeneous and I think that a better introduction than this would be
+difficult, so let’s move on.
+
+#+ATTR_HTML: :width 60% :height
+file:../../images/julia.png
+
+The image is a render of the [[https://en.wikipedia.org/wiki/Julia_set][Julia set]] and is generated on the hash of the actual git commit.
+
+** Who am I
+   
+I’m a math student who likes programming problems, I think this is a good and concise definition
+compared to what this blog looks like. However I’m more than this, I also appreciate a variety of
+different things like cooking, [[https://www.nethack.org][really nerd videogames]], free software, music (light or classical, as
+a listener or [[../posts/demo.org][as a player]]), sci-fi books, old and boring movies, etc...
+
+** Technologies
+
+To write

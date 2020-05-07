@@ -10,6 +10,43 @@
 (defmacro setq-default (var val default)
   `(setq ,var (if ,val ,val ,default)))
 
+(defun string-expand-template (template values)
+  (let ((pos 0) (result template) prev-result)
+    (while (string-match
+	    "\\(?:^\\|[^\\]\\)\\({{{\\([a-z0-9-]+\\)}}}\\)"
+	    result pos)
+      (setq prev-result result)
+      (setq result (replace-match
+		    (or (cdr (assoc (match-string 2 result) values)) "")
+		    t t result 1))
+      (setq pos (+ (match-beginning 2)
+		   (- (length result) (length prev-result)))))
+    result))
+
+(defun perform-template-expansion-here (values)
+  (while (re-search-forward "\\(?:^\\|[^\\]\\)\\({{{\\([a-z0-9-]+\\)\\(?:,\\(.*?\\)\\)?}}}\\)" nil t)
+    (replace-match (or (cdr (assoc (match-string 2)
+				   values))
+		       (match-string 3)
+		       "")
+		   t t nil 1)))
+
+(defun expand-template (template values)
+  (with-temp-buffer
+    (insert template)
+    (goto-char 0)
+    (perform-template-expansion-here values)
+    (buffer-string)))
+
+(defun insert-and-expand-template (template values)
+  (save-restriction
+    (narrow-to-region (point) (point))
+    (insert template)
+    (goto-char (point-min))
+    (perform-template-expansion-here values)
+    (goto-char (point-max))))
+
+
 (defun entries-to-html (entries)
   (seq-reduce (lambda (a b)
 		(format "%s<li><a href='%s'>%s</a></li>" a (cdr b) (car b)))
@@ -21,13 +58,15 @@
 
 
 ;; Blog settings
-(setq-default blog-commit (getenv "TRAVIS_COMMIT") "No commit")
+(setq-default blog-commit (getenv "TRAVIS_COMMIT") "uncommitted")
 
 (setq blog-url "https://cc0.tech/"
       blog-author "Andrea Ciceri"
       blog-email "andrea.ciceri@autistici.org"
       blog-github "https://github.com/andrea96/"
-      blog-fingerprint "7A66 EEA1 E6C5 98D0 7D36 1287 A1FC 8953 2D1C 5654"
+      blog-fingerprint "
+7A66 EEA1 E6C5 98D0 7D36
+1287 A1FC 8953 2D1C 5654"
       blog-menu '(("About" . "/")
 		  ("Posts" . "/posts/")
 		  ("Github" . blog-github)
@@ -71,24 +110,48 @@ Your browser does not support the video tag.
 <link rel='stylesheet' href='/css/custom.css' type='text/css'/>
 <script src='/js/asciinema-player.js'></script>
 <script src='/js/darkmode-js.min.js'></script>
+<script src='/js/custom.js'></script>
 ")
       
 (defun blog-html-preamble (plist)
-  (format "<ul class='horizontal-menu'>%s</ul>"
+  (format "<nav class='horizontal-menu'><ul>%s</ul></nav>"
 	  (entries-to-html blog-menu)))
-      
+
 (setq blog-html-postamble
-      (concat
-       (format "<ul class='vertical-menu'>%s</ul>"
-	       (entries-to-html blog-menu))
-       "Contact me at <a href='mailto:andrea.ciceri@autistici.org'>andrea.ciceri@autistici.org</a><br>"
-       (format "My <a href='#'>public key</a> and its fingerprint: %s<br>" blog-fingerprint)
-       "<a href=''>Built</a> by <a href='#'>Travis</a> and <a href='#'>Nix</a> on %C<br>"
-       (format "Commit: %s<br>" blog-commit)
-       "Powered by %c<br>"
-       "<a href='javascript:darkmode.toggle();'>Toggle</a> the dark mode<br>"
-       "<script>const darkmode =  new Darkmode();</script>"
-       ))
+      (expand-template "
+<div id='footer-pre'>
+  <nav id='vertical-menu'><ul>{{{menu-html}}}</ul></nav>
+  <button type='button' id='toggle-darkmode'></button>
+  <nav>
+  Feel free to contact me at
+  <pre><a href='mailto:{{{email}}}'>{{{email}}}</a></pre>
+  My GPG <a href='pubkey'>public key</a> and its fingerprint:
+  <pre>{{{fingerprint}}}</pre>
+  The commit hash of this build is
+  <pre><a href='mailto:{{{hash}}}'>{{{hash}}}</a></pre>
+  <hr>
+  Except where otherwise noted, the contents of this website are licensed under
+  <a rel='license' href='https://creativecommons.org/licenses/by-sa/4.0/'>
+    Creative Commons Attribution-ShareAlike 4.0</a>,
+  the complete source code to build this website is licensed under
+  <a rel='license' href='#'>
+    GNU General Public License 3.0
+  </a> and it's hosted on
+  <a href='https://github.com'>GitHub</a>.
+  </nav>
+</div>
+<div id='footer-post'>
+  <div id='left'>Powered by %c</div>
+  <div id='right'>
+    <a href='{{{built}}}'>Built</a> with <a href='https://travis-ci.org'>Travis</a> and <a href='https://nixos.org/nix/'>Nix</a> on %C<br>
+  </div>
+</div>"
+		       `(("menu-html" . ,(entries-to-html blog-menu))
+			 ("email" . ,blog-email)
+			 ("pubkey" . "andreaciceri-key.txt")
+			 ("hash" . ,blog-commit)
+			 ("built" . "#")
+			 ("fingerprint" . ,blog-fingerprint))))
 
 (defun blog-sitemap-format-entry (entry style project)
   "Format posts with author and published data in the index page.

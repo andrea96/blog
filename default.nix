@@ -19,12 +19,14 @@ let
     htmlmin
     csscompressor
     rjsmin
+    pillow
   ]); 
   blog-build = pkgs.writeShellScriptBin "blog-build"
     ''
       [ ! $CI ] && rm -Rf public/ ~/.org-timestamps/
       ${customEmacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all
-    '';  
+      [ $CI ] && blog-julia $CI
+    '';
   blog-serve = pkgs.writeShellScriptBin "blog-serve"
     ''
       ${pkgs.python3}/bin/python -m http.server --directory=public/ 8080
@@ -46,6 +48,10 @@ let
     ''
       ${customPython}/bin/python compressor.py public/
     '';  
+  blog-julia = pkgs.writeShellScriptBin "blog-julia"
+    ''
+      ${customPython}/bin/python julia.py $1
+    '';
 in
 stdenv.mkDerivation rec {
   name = "blog";
@@ -55,6 +61,7 @@ stdenv.mkDerivation rec {
     blog-deploy
     blog-backup
     blog-compress
+    blog-julia
   ];
 }
 
