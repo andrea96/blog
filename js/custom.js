@@ -8,9 +8,9 @@ function manageDarkMode() {
     });
     let toggle = document.getElementById('toggle-darkmode');
     console.log(darkmode);
-    toggle.innerHTML = darkmode.isActivated() ? "Disable" : "Enable";
+    toggle.innerHTML = darkmode.isActivated() ? "Night mode" : "Day mode";
     toggle.onclick = function () {
 	darkmode.toggle();
-	toggle.innerHTML = darkmode.isActivated() ? "Disable" : "Enable";
+	toggle.innerHTML = darkmode.isActivated() ? "Night mode" : "Day mode";
     };
 }

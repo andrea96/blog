@@ -46,6 +46,18 @@
     (perform-template-expansion-here values)
     (goto-char (point-max))))
 
+(defun tags-from-post (post-filename)
+  "Extract the `#+filetags:` from POST-FILENAME as list of strings."
+  (format "%s"
+  (let ((case-fold-search t))
+    (with-temp-buffer
+      (insert-file-contents post-filename)
+      (goto-char (point-min))
+      (if (search-forward-regexp "^\\#\\+filetags:[ ]*:\\(.*\\):$" nil t)
+          (split-string (match-string 1) ":")
+	(if (search-forward-regexp "^\\#\\+filetags:[ ]*\\(.+\\)$" nil t)
+            (split-string (match-string 1))
+	  ))))))
 
 (defun entries-to-html (entries)
   (seq-reduce (lambda (a b)
@@ -153,21 +165,40 @@ Your browser does not support the video tag.
 			 ("built" . "#")
 			 ("fingerprint" . ,blog-fingerprint))))
 
-(defun blog-sitemap-format-entry (entry style project)
-  "Format posts with author and published data in the index page.
+(defun blog-sitemap-function (title content)
+  (expand-template "
+#+begin_export html
+<h1>{{{title}}}</h1>
+<table style='width: 100%; text-align: left'>
+  <thead>
+    <th>Title</th>
+    <th>Date</th>
+  </thead>
+  <tbody>
+    {{{tbody}}}
+  </tbody>
+</table>
+#+end_export
+"
+		   `(("title" . ,title)
+		     ("tbody" . ,(seq-reduce (lambda (a b) (concat (car b) a)) (cdr content) "")))))
 
-ENTRY: file-name
-STYLE:
-PROJECT: `posts in this case."
+(defun blog-sitemap-format-entry (entry style project)
   (cond ((not (directory-name-p entry))
-         (format "*[[file:%s][%s]]*
-                 #+HTML: <p class='pubdate'>by %s on %s.</p>"
-                 (car (split-string entry "\\."))
-                 (org-publish-find-title entry project)
-                 (car (org-publish-find-property entry :author project))
-                 (format-time-string blog-date-format
-                                     (org-publish-find-date entry project))))
-        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
+         (expand-template "
+<tr>
+<td>
+<a href='{{{link}}}'>{{{title}}}</a>
+</td>
+<td>
+{{{date}}}
+</td>
+</tr>"
+			  `(("link" . ,(car (split-string entry "\\.")))
+			    ("title" . ,(org-publish-find-title entry project))
+			    ("date" . ,(format-time-string blog-date-format
+							   (org-publish-find-date entry project))))))
+	   ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
         (t entry)))
 
 (defun my-org-export-output-file-name (orig-fun extension &optional subtreep pub-dir)
@@ -215,8 +246,9 @@ PROJECT: `posts in this case."
          :exclude ,(regexp-opt '("README.org" "draft"))
          :auto-sitemap t
          :sitemap-filename "index.org"
-         :sitemap-title "Blog Index"
+         :sitemap-title "Posts archive"
          :sitemap-format-entry blog-sitemap-format-entry
+	 :sitemap-function blog-sitemap-function
          :sitemap-style list
          :sitemap-sort-files anti-chronologically
          :html-link-home "/"

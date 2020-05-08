@@ -1,7 +1,6 @@
 #+title: Demo post
 #+date: <2020-05-02 Sat>
-#+LANGUAGE: it
-#+options: toc:nil
+#+language: it
  
 * Testo
 

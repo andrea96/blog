@@ -4,17 +4,9 @@
     --color-grey: #888;
     --color-light-grey: #ccc;
     --color-blue: #4682dd;
-    --color-blue-darker: #2222dd;
+    --color-dark-blue: #2222dd;
     --color-white: #fff;
     --color-dark-white: #ccc;
-
-    --color-text: var(--color-onyx);
-    --color-text-clear: var(--color-white);
-    --color-border: var(--color-onyx);
-    --color-menu: var(--color-onyx);
-    --color-menu-hover: var(--color-blue);
-    --color-link: var(--color-blue);
-    --color-link-hover: var(--color-blue-darker);
 }
 
 @font-face {
@@ -54,7 +46,7 @@
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     font-family: dejavu, serif;
-    color: var(--color-text);
+    color: var(--color-dark-onyx);
 }
 
 #top {
@@ -112,13 +104,11 @@ li.on, li.trans, li.off {
 }
 
 a {
-    color: var(--color-link);
-    isolation: isolate;
+    color: var(--color-blue);
 }
 
 a:hover, a:focus {
-    color: var(--color-link-hover);
-    isolation: isolate;
+    color: var(--color-dark-blue);
 }
 
 figure > img {
@@ -134,11 +124,7 @@ figure > figcaption {
 .note, .warning {
     marign: 1rem 0;
     padding: 0 1rem;
-    isolation: isolate;
-}
-
-p.note {
-    isolation: isolate;
+    color: inherit;
 }
 
 .note {
@@ -170,13 +156,16 @@ caption.t-bottom {
     margin-top: 1rem;
 }
 
-.darkmode--activated .MathJax {
-    color: var(--color-dark-white);
-}
-
 .MathJax:focus, .mjx-chtml:focus, .MathJax_SVG:focus {
+    outline-color: var(--color-dark-onyx);
+    outline-style: dotted;
+    outline-width: 1px;
 }
 
+.MathJax, .mjx-chtml, .MathJax_SVG {
+    color: var(--color-dark-onyx);
+}
+    
 .youtube-wrapper {
     padding-bottom: 56.25%;
     position: relative;
@@ -280,6 +269,18 @@ html, body {
 #toggle-darkmode {
     position: absolute;
     right: calc((100% - 768px)/2);
+    background-color: transparent;
+    border: 0;
+    color: var(--color-light-grey);
+}
+
+#toggle-darkmode:hover {
+    cursor: pointer;
+    color: var(--color-blue);
+}
+
+sup, sub {
+    isolation: isolate;
 }
 
 

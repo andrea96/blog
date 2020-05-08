@@ -1,0 +1,17 @@
+#+title: Consonno
+#+date: <2017-08-12 Sat>
+#+language: en
+
+A bunch of photos of my trip to the ghost town Consonno.
+
+[[file:../../images/consonno-1.jpg]]
+
+[[file:../../images/consonno-2.jpg]]
+
+[[file:../../images/consonno-3.jpg]]
+
+[[file:../../images/consonno-4.jpg]]
+
+I’ve used a Canon 600D with the default 18-135mm lense, the photos were taken in
+raw mode and then processed using [[http://rawtherapee.com][RawTherapee]] an open source software I really
+appreciate.
