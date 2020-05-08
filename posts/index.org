@@ -10,6 +10,14 @@
     
 <tr>
 <td>
+<a href='tetris'>Vintage tetris written in Guile Scheme</a>
+</td>
+<td>
+Aug 12, 2017
+</td>
+</tr>
+<tr>
+<td>
 <a href='consonno'>Consonno</a>
 </td>
 <td>
@@ -22,6 +30,38 @@ Aug 12, 2017
 </td>
 <td>
 Sep 11, 2017
+</td>
+</tr>
+<tr>
+<td>
+<a href='metaballs'>Metaballs and marching cubes</a>
+</td>
+<td>
+Dec 19, 2018
+</td>
+</tr>
+<tr>
+<td>
+<a href='lambda-calculus-js'>Lambda calculus in Javascript</a>
+</td>
+<td>
+Mar 31, 2019
+</td>
+</tr>
+<tr>
+<td>
+<a href='people-united'>¡El pueblo unido jamás será vencido!</a>
+</td>
+<td>
+Sep 23, 2019
+</td>
+</tr>
+<tr>
+<td>
+<a href='midi-to-bach'>Midi to Bach</a>
+</td>
+<td>
+Sep 23, 2019
 </td>
 </tr>
 <tr>

@@ -137,16 +137,16 @@ Your browser does not support the video tag.
   <nav>
   Feel free to contact me at
   <pre><a href='mailto:{{{email}}}'>{{{email}}}</a></pre>
-  My GPG <a href='pubkey'>public key</a> and its fingerprint:
+  My GPG <a href='{{{pubkey}}}'>public key</a> and its fingerprint:
   <pre>{{{fingerprint}}}</pre>
   The commit hash of this build is
-  <pre><a href='mailto:{{{hash}}}'>{{{hash}}}</a></pre>
+  <pre><a href='https://github.com/andrea96/blog/commit/{{{hash}}}'>{{{hash}}}</a></pre>
   <hr>
   Except where otherwise noted, the contents of this website are licensed under
   <a rel='license' href='https://creativecommons.org/licenses/by-sa/4.0/'>
     Creative Commons Attribution-ShareAlike 4.0</a>,
   the complete source code to build this website is licensed under
-  <a rel='license' href='#'>
+  <a rel='license' href='https://www.gnu.org/licenses/gpl-3.0.en.html'>
     GNU General Public License 3.0
   </a> and it's hosted on
   <a href='https://github.com'>GitHub</a>.
@@ -160,9 +160,9 @@ Your browser does not support the video tag.
 </div>"
 		       `(("menu-html" . ,(entries-to-html blog-menu))
 			 ("email" . ,blog-email)
-			 ("pubkey" . "andreaciceri-key.txt")
+			 ("pubkey" . "/andreaciceri-key.txt")
 			 ("hash" . ,blog-commit)
-			 ("built" . "#")
+			 ("built" . "https://travis-ci.org/github/andrea96/blog")
 			 ("fingerprint" . ,blog-fingerprint))))
 
 (defun blog-sitemap-function (title content)

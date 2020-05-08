@@ -160,7 +160,10 @@ dt { font-weight: bold; }
 #org-div-home-and-up
  { text-align: right; font-size: 70%; white-space: nowrap; }
 textarea { overflow-x: auto; }
-.linenr { font-size: smaller }
+.linenr {
+    font-size: smaller;
+    user-select: none;
+}
 .code-highlighted { background-color: #ffff00; }
 .org-info-js_info-navigation { border-style: none; }
 #org-info-js_console-label

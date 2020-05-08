@@ -26,6 +26,7 @@ let
       [ ! $CI ] && rm -Rf public/ ~/.org-timestamps/
       ${customEmacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all
       [ $CI ] && blog-julia $CI
+      cp andreaciceri-key.txt public/
     '';
   blog-serve = pkgs.writeShellScriptBin "blog-serve"
     ''
