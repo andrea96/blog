@@ -3,11 +3,18 @@
 #+language: it
  
 * Testo
+  :PROPERTIES:
+  :ID:       ab5d0752-d522-4c60-ae36-f22d7f665687
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Si può inserire il testo in *grassetto*, /italico/ e */grassetto e italico/*, inoltre il testo può
 essere testo ~inline~ o =verbatim=, _sottolineato_, +barrato+ e a ped_{ice} o api^{ice}. 
 
 ** Le liste sono testo
+   :PROPERTIES:
+   :ID:       5ff194eb-2831-44e5-92b9-c8043b4d0183
+   :END:
 
 Questa è una lista non ordinata...
 
@@ -25,6 +32,9 @@ Questa è una lista non ordinata...
 4. Quarto
 
 *** E le checklist sono liste
+    :PROPERTIES:
+    :ID:       e123aa54-2e15-4706-9ee2-65f5846fce1c
+    :END:
 
 E per le checklist?
 
@@ -61,6 +71,10 @@ ma per seguir virtute e canoscenza
 #+end_verse
 
 * Sorgenti
+  :PROPERTIES:
+  :ID:       7fea931f-0ab5-40fc-86c9-ade08c657a89
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Si possono includere sorgenti senza evidenziazione della sintassi.
 
@@ -103,6 +117,10 @@ numero di riga.
 #+end_src
 
 * Tabelle
+  :PROPERTIES:
+  :ID:       97f65a92-4fab-46f1-b598-b96adccf9937
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Si possono inserire tabelle, con allineamenti differenti colonna per colonna e una meravigliosa
 didascalia.
@@ -115,6 +133,10 @@ didascalia.
 | Non       so |   cosa    |     scrivere |
 
 * Immagini
+  :PROPERTIES:
+  :ID:       af68234d-1aef-417a-8c83-78251c78d88a
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Includere immagini è semplice (didascalia opzionale): 
 
@@ -122,17 +144,29 @@ Includere immagini è semplice (didascalia opzionale):
 [[file:../../images/lojban-flag.gif]]
 
 * Video
+  :PROPERTIES:
+  :ID:       06ff1475-5485-43f3-b863-73803a58d21a
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Ecco l'eversione della sfera, ovvero come risvoltarla.
 
 {{{video(test)}}}
 
 * Audio
+  :PROPERTIES:
+  :ID:       29f14f45-f9fd-42d9-a80b-0598d657c7a5
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 And then I noticed that She was a Gargoyle dei Nanowar:
 
 {{{audio(nanowar-and-then-i-noticed-that-she-was-a-gargoyle)}}}
 
 * Matematica
+  :PROPERTIES:
+  :ID:       8ed095f4-b014-4bff-b582-08dc7abe5ecc
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Si può scrivere matematica inline, per esempio lo sapevi che $\not \exists a,b,c \in \mathbb{N}$
 tali che
@@ -141,6 +175,10 @@ $$a^n+^n=c^n \forall n$$
 dove $n \in \mathbb{N}$.
 
 * Youtube
+  :PROPERTIES:
+  :ID:       b8488fa0-28bc-4aea-bec4-0f5a0bfc9cac
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Nonostante preferirei evitare di appoggiarmi troppo a servizi esterni di cui non approvo le
 politiche ho predisposto una macro per includere video a [[https://youtube.com][Youtube]].
@@ -148,6 +186,10 @@ politiche ho predisposto una macro per includere video a [[https://youtube.com][
 {{{youtube(j9V78UbdzWI)}}}
 
 * Aciinema
+  :PROPERTIES:
+  :ID:       5f6eb776-1c7f-4234-a41f-b5295922f985
+  :PUBDATE:  <2020-05-13 Wed 00:36>
+  :END:
 
 Personalmente mi piace molto [[https://asciinema.org][Asciinema]] e in generale l'idea di non dover usare gif animate per
 raggiungere scopi analoghi. Mi piace meno l'idea di dovermi affidare anche a loro per l'hosting dei

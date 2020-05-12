@@ -10,6 +10,34 @@
 }
 
 @font-face {
+    font-family: "fira";
+    src: url('../fonts/FiraCode-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: "charter";
+    src: url("../fonts/charter_regular.woff") format('woff');
+}
+
+@font-face {
+    font-family: "charter";
+    src: url("../fonts/charter_bold.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "charter";
+    src: url("../fonts/charter_bold_italic.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "charter";
+    src: url("../fonts/charter_italic.woff") format('woff');
+    font-style: italic;
+}
+@font-face {
     font-family: "dejavu";
     src: url("../fonts/DejaVuSerif.woff") format('woff');
 }
@@ -45,12 +73,13 @@
 }
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
-    font-family: dejavu, serif;
+    font-family: charter, serif;
     color: var(--color-dark-onyx);
 }
 
 #top {
-    text-align: center;
+    text-align: right;
+    padding-right: calc((100% - 768px)/2);
     background-color: var(--color-dark-onyx);
     margin: 0 0 3rem;
     isolation: isolate;
@@ -65,7 +94,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     min-width: 768px;
     list-style: none;
     margin: 0;
-    font-family: dejavu-sans;
+    font-family: fira;
     font-size: 1.6rem;
     padding: 0.7rem 0;
 }
@@ -76,7 +105,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 .horizontal-menu > ul > li {
     display: inline;
-    margin: 0 1em;
+    margin: 0 0 0 1em;
 }
 
 .horizontal-menu a {
@@ -253,11 +282,13 @@ html, body {
 #footer-pre > nav > pre {
     border: 0;
     margin: 0;
+    font-family: fira;
     font-size: 1rem;
 }
 
 #vertical-menu {
     display: none;
+    font-family: fira;
 }
 
 #vertical-menu > ul {

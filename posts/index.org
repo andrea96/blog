@@ -10,7 +10,7 @@
     
 <tr>
 <td>
-<a href='tetris'>Vintage tetris written in Guile Scheme</a>
+<a href='consonno'>Consonno</a>
 </td>
 <td>
 Aug 12, 2017
@@ -18,7 +18,7 @@ Aug 12, 2017
 </tr>
 <tr>
 <td>
-<a href='consonno'>Consonno</a>
+<a href='tetris'>Vintage tetris written in Guile Scheme</a>
 </td>
 <td>
 Aug 12, 2017
@@ -50,7 +50,7 @@ Mar 31, 2019
 </tr>
 <tr>
 <td>
-<a href='people-united'>¡El pueblo unido jamás será vencido!</a>
+<a href='midi-to-bach'>Midi to Bach</a>
 </td>
 <td>
 Sep 23, 2019
@@ -58,7 +58,7 @@ Sep 23, 2019
 </tr>
 <tr>
 <td>
-<a href='midi-to-bach'>Midi to Bach</a>
+<a href='people-united'>¡El pueblo unido jamás será vencido!</a>
 </td>
 <td>
 Sep 23, 2019
