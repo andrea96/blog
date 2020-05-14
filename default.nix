@@ -41,7 +41,7 @@ let
     '';  
   blog-backup = pkgs.writeShellScriptBin "blog-backup"
     ''
-      filename="blog-$TRAVIS_COMMIT.tar.gz"
+      filename="blog-backup.tar.gz"
       tar -czvf $filename public/
       mv $filename public/
     '';  

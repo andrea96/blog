@@ -6,7 +6,6 @@
     --color-blue: #4682dd;
     --color-dark-blue: #2222dd;
     --color-white: #fff;
-    --color-dark-white: #ccc;
 }
 
 @font-face {
@@ -82,7 +81,6 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     padding-right: calc((100% - 768px)/2);
     background-color: var(--color-dark-onyx);
     margin: 0 0 3rem;
-    isolation: isolate;
 }
 
 .title {
@@ -115,16 +113,17 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 .horizontal-menu a:hover {
     color: var(--color-blue);
+    text-decoration-line: underline;
 }
 
 #content {
     width: 768px;
-    margin: 0 auto;
+    margin: 0 auto 5rem;
 }
 
-p, ul.org-ul, ol.org-ol {
+p, ul.org-ul, ol.org-ol, table {
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     word-wrap: break-word;
 }
 
@@ -134,10 +133,15 @@ li.on, li.trans, li.off {
 
 a {
     color: var(--color-blue);
+    text-decoration: none;
 }
 
 a:hover, a:focus {
     color: var(--color-dark-blue);
+}
+
+pre {
+    font-family: fira;
 }
 
 figure > img {
@@ -164,15 +168,10 @@ figure > figcaption {
     border: 1px solid #f44;
 }
 
-canvas {
-    isolation: isolate;
-}
-
 video {
     display: block;
     max-width: 100%;
     margin: 0 auto;
-    isolation: isolate;
 }
 
 audio {
@@ -225,7 +224,6 @@ html, body {
     font-size: 1rem;
     font-family: dejavu-sans;
     text-align: justify;
-    isolation: isolate;
 }
 
 #footer-pre > nav, #footer-post > nav{
@@ -340,7 +338,7 @@ html, body {
     }
 
     p, li {
-	font-size: 1rem;
+	font-size: 1.1rem;
     }
     
     #footer-post {
@@ -355,4 +353,20 @@ html, body {
     #toggle-darkmode {
 	right: 1rem;
     }
+}
+
+
+/* Dark mode styles */
+
+body.darkmode {
+    background-color: #000;
+    color: var(--color-light-grey);
+}
+
+.body.darkmode MathJax:focus, body.darkmode .mjx-chtml:focus, body.darkmode .MathJax_SVG:focus {
+    outline-color: var(--color-light-grey);
+}
+
+body.darkmode .MathJax, body.darkmode .mjx-chtml, body.darkmode .MathJax_SVG {
+    color: var(--color-light-grey);
 }

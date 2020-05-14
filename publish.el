@@ -86,7 +86,7 @@
       blog-date-format "%b %d, %Y"
       blog-attachments (regexp-opt
 			'("jpg" "jpeg" "gif" "png" "svg" "mp4" "mp3" "ogg"
-			  "ico" "cur" "css" "js" "woff" "html" "pdf"))
+			  "ico" "cur" "css" "js" "woff" "html" "pdf" "wasm"))
       )
 
 (setq blog-macros '(("audio" . "
@@ -121,8 +121,8 @@ Your browser does not support the video tag.
 <link rel='stylesheet' href='/css/asciinema-player.css' type='text/css'/>
 <link rel='stylesheet' href='/css/custom.css' type='text/css'/>
 <script src='/js/asciinema-player.js'></script>
-<script src='/js/darkmode-js.min.js'></script>
 <script src='/js/custom.js'></script>
+<script src='/js/hyphenator.js'></script>
 ")
       
 (defun blog-html-preamble (plist)
@@ -215,7 +215,6 @@ Your browser does not support the video tag.
     (apply orig-fun extension subtreep pub-dir nil)))
 
 (advice-add 'org-export-output-file-name :around #'my-org-export-output-file-name)
-
 
 ;; Org settings
 (setq org-export-with-section-numbers nil
