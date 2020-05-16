@@ -6,6 +6,14 @@
     --color-blue: #4682dd;
     --color-dark-blue: #2222dd;
     --color-white: #fff;
+    --color-red: #f44;
+
+    --font-serif: "charter";
+    --font-mono: "fira";
+    --font-sans: "dejavu sans";
+    --font-text-size: 1.4rem;
+    --font-text-size-mobile: 1rem;
+    --font-menu-size: 1.6rem;
 }
 
 @font-face {
@@ -36,35 +44,6 @@
     src: url("../fonts/charter_italic.woff") format('woff');
     font-style: italic;
 }
-@font-face {
-    font-family: "dejavu";
-    src: url("../fonts/DejaVuSerif.woff") format('woff');
-}
-
-@font-face {
-    font-family: "dejavu";
-    src: url("../fonts/DejaVuSerif-Bold.woff") format('woff');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "dejavu";
-    src: url("../fonts/DejaVuSerif-BoldItalic.woff") format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "dejavu";
-    src: url("../fonts/DejaVuSerif-Italic.woff") format('woff');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "dejavu";
-    src: url("../fonts/DejaVuSerif-Italic.woff") format('woff');
-    font-style: italic;
-}
 
 @font-face {
     font-family: "dejavu-sans";
@@ -93,7 +72,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     list-style: none;
     margin: 0;
     font-family: fira;
-    font-size: 1.6rem;
+    font-size: var(--font-menu-size);
     padding: 0.7rem 0;
 }
 
@@ -121,10 +100,17 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     margin: 0 auto 5rem;
 }
 
-p, ul.org-ul, ol.org-ol, table {
+#content {
     text-align: justify;
-    font-size: 1.4rem;
+    font-size: var(--font-text-size);
     word-wrap: break-word;
+}
+
+#content::after {
+    content: "§";
+    position: absolute;
+    left: 50%;
+    font-size: 3rem;
 }
 
 li.on, li.trans, li.off {
@@ -140,8 +126,24 @@ a:hover, a:focus {
     color: var(--color-dark-blue);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
+pre.example {
+    margin: 1rem 0 0 0;
+    padding: 0 1rem;
+    border-left: 0.2rem dashed #ccc;
+}
+
 pre {
-    font-family: fira;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
 }
 
 figure > img {
@@ -154,18 +156,32 @@ figure > figcaption {
     text-align: center;
 }
 
-.note, .warning {
-    marign: 1rem 0;
+.verse, .note, .warning {
+    margin: 1rem 0 1rem 1rem;
     padding: 0 1rem;
     color: inherit;
 }
 
 .note {
-    border: 1px solid var(--color-light-grey);
+    border-left: 0.2rem solid var(--color-light-grey);
 }
 
 .warning {
-    border: 1px solid #f44;
+    border-left: 0.2rem solid var(--color-red);
+}
+
+.verse {
+    border-left: 0.2rem dashed var(--color-light-grey);
+}
+
+blockquote::before {
+    content: "“";
+    position: absolute;
+    margin-left: -1rem;
+}
+
+blockquote p::after {
+    content: "”";
 }
 
 video {
@@ -196,6 +212,7 @@ caption.t-bottom {
 
 .MathJax, .mjx-chtml, .MathJax_SVG {
     color: var(--color-dark-onyx);
+    font-size: 2rem;
 }
     
 .youtube-wrapper {
@@ -279,14 +296,14 @@ html, body {
 
 #footer-pre > nav > pre {
     border: 0;
-    margin: 0;
-    font-family: fira;
+    margin: 0.6rem 0.8rem;
+    font-family: var(--font-mono);
     font-size: 1rem;
 }
 
 #vertical-menu {
     display: none;
-    font-family: fira;
+    font-family: var(--font-mono);
 }
 
 #vertical-menu > ul {
@@ -370,3 +387,4 @@ body.darkmode {
 body.darkmode .MathJax, body.darkmode .mjx-chtml, body.darkmode .MathJax_SVG {
     color: var(--color-light-grey);
 }
+

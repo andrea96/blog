@@ -217,7 +217,7 @@ Your browser does not support the video tag.
 (advice-add 'org-export-output-file-name :around #'my-org-export-output-file-name)
 
 ;; Org settings
-(setq org-export-with-section-numbers nil
+(setq org-export-with-section-numbers t
       org-export-with-smart-quotes t
       org-export-with-toc nil
       org-html-divs '((preamble "header" "top")

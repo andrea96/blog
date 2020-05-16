@@ -22,25 +22,28 @@
 .underline { text-decoration: underline; }
 #postamble p, #preamble p { font-size: 90%; margin: .2em; }
 p.verse { margin-left: 3%; }
-pre {
-  border: 1px solid #ccc;
-  /* box-shadow: 3px 3px 3px #eee; */
-  padding: 8pt;
-  font-family: monospace;
-  overflow-x: auto;
+.org-src-container {
+    border-left: 0.2rem solid #ccc;
+    margin: 1em auto;
+    padding: 0;
+    position: relative;
 }
-pre.src {
-  position: relative;
-  padding-top: 1.2em;
+
+.org-src-container>pre {
+    overflow: auto;
+    margin: 0;
+    padding: 1.5rem 0.5rem 0.3rem;
 }
-pre.src:before {
-  display: none;
-  position: absolute;
-  background-color: white;
-  top: 0;
-  right: 0;
-  padding: 3px;
-  border: 0;
+.org-src-container>pre:before {
+    display: block;
+    position: absolute;
+    background-color: #ccc;
+    top: 0;
+    right: 0;
+    padding: 0 0.5em;
+    border-bottom-left-radius: 8px;
+    border: 0;
+    color: white;
 }
 pre.src:before { display: inline;}
 /* Languages per Org manual */
