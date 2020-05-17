@@ -1,6 +1,8 @@
-#+title: Demo post
+#+title: Demo article
+#+subtitle: A carousel of functionalities
 #+date: <2020-05-02 Sat>
 #+language: it
+#+options: toc:nil
  
 * Testo
   :PROPERTIES:
@@ -31,16 +33,11 @@ Questa è una lista non ordinata...
 3. Terzo
 4. Quarto
 
-*** E le checklist sono liste
-    :PROPERTIES:
-    :ID:       e123aa54-2e15-4706-9ee2-65f5846fce1c
-    :END:
+  
+*** TODO ciao
+*** DONE mondo
+*** DONE finito
 
-E per le checklist?
-
-- [X] Fatto
-- [-] Iniziato ma non ancora finito
-- [ ] Da fare
 
 Inserire [[https://google.it][link]] è facile, si può anche omettere il nome: [[https://google.it]].
 
@@ -104,16 +101,16 @@ numero di riga.
     ((AMB expression ...) 
      (LET ((FAIL-SAVE FAIL)) 
        ((CALL-WITH-CURRENT-CONTINUATION ; Capture a continuation to 
-          (LAMBDA (K-SUCCESS)           ;   which we return possibles. 
-            (CALL-WITH-CURRENT-CONTINUATION 
-              (LAMBDA (K-FAILURE)       ; K-FAILURE will try the next 
-                (SET! FAIL K-FAILURE)   ;   possible expression. 
-                (K-SUCCESS              ; Note that the expression is 
-                 (LAMBDA ()             ;   evaluated in tail position 
-                   expression))))       ;   with respect to AMB. 
-            ... 
-            (SET! FAIL FAIL-SAVE)      ; Finally, if this is reached, 
-            FAIL-SAVE)))))))            ;   we restore the saved FAIL. 
+	  (LAMBDA (K-SUCCESS)           ;   which we return possibles. 
+	    (CALL-WITH-CURRENT-CONTINUATION 
+	      (LAMBDA (K-FAILURE)       ; K-FAILURE will try the next 
+		(SET! FAIL K-FAILURE)   ;   possible expression. 
+		(K-SUCCESS              ; Note that the expression is 
+		 (LAMBDA ()             ;   evaluated in tail position 
+		   expression))))       ;   with respect to AMB. 
+	    ... 
+	    (SET! FAIL FAIL-SAVE)       ; Finally, if this is reached, 
+	    FAIL-SAVE)))))))            ;   we restore the saved FAIL. 
 #+end_src
 
 * Tabelle
@@ -170,9 +167,32 @@ And then I noticed that She was a Gargoyle dei Nanowar:
 
 Si può scrivere matematica inline, per esempio lo sapevi che $\not \exists a,b,c \in \mathbb{N}$
 tali che
+
 $$a^n+^n=c^n \forall n$$
 
 dove $n \in \mathbb{N}$.
+
+#+begin_definition
+Ciao
+#+end_definition
+
+#+begin_theorem
+If an integer $n$ is greater than 2, then the equation $a^n + b^n = c^n$
+has no solutions in non-zero integers $a$, $b$, and $c$.
+#+end_theorem
+
+#+begin_proposition
+Proposizione
+#+end_proposition
+
+#+begin_lemma
+Lemma
+#+end_lemma
+
+#+begin_proof
+I have a truly /marvelous/ proof of this proposition that this margin is too
+narrow to contain.
+#+end_proof
 
 * Youtube
   :PROPERTIES:

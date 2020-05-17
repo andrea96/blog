@@ -1,0 +1,50 @@
+#+title: Il teorema di Sard
+#+subtitle: e alcune sue applicazioni
+#+date: <2020-05-17>
+#+language: it
+#+options: toc:nil
+
+$$
+   \def\R{{\mathbb{R}}}
+   \def\N{{\mathbb{R}}}
+$$
+
+#+begin_note
+Questo post nasce pochi giorni dopo un seminario che ho dovuto tenere in
+Universitá, infatti, dopo aver approfondito l’argomento che sto per esporre, mi
+spiaceva lasciare tali concetti "al vento" e mi sembrava sensato trascriverli
+nero su bianco da qualche parte. 
+L’idea iniziale era di scrivere un bel documento in $\LaTeX$ di cui farne un pdf
+da perdere in qualche remota cartella del pc, ma alla fine mi sono detto: perché
+non qui sul blog?
+#+end_note
+
+L’obiettivo di queste note é di fornire una semplice e concisa esposizione del
+teorema di Sard, noto risultato di geometria differenziale.
+La trattazione é carica di osservazioni e frequenti definizioni, in modo da
+essere digeribile anche ai non addetti ai lavori.
+
+#+begin_definition
+Siano $(a_1, \dots, a_n), (b_1, \dots, b_n) \in \R^n$ tali che $a_i < b_i$,
+chiamiamo /rettangolo solido n-dimensionale/ l'insieme
+$$
+S(a, b)=\{(x_1, \dots, x_n) \in \mathbb{R}^n : a_i \lt x_i \lt b_i\}
+$$
+#+end_definition
+
+#+begin_definition
+Chiamiamo /volume n-dimensionale/ di un rettangolo solido n-dimensionale $S(a,
+b)$ la quantitá reale positiva
+$$
+Vol(S(a, b)) = \prod_{i=1}^n (b_i - a_i)
+$$
+#+end_definition
+
+#+begin_definition
+Diciamo che $A \subset \R^n$ ha /misura nulla/ se $\forall \epsilon \gt 0$
+esiste un ricoprimento $\{S_i\}_{i \in \N}$ di $A$ (ovvero $\bigcup_{i \in \N}
+S_i \supset A$) formato da rettangoli solidi $S_i$ tale che
+$$
+\sum_{i \in \mathbb{N}} Vol(S_i) \lt \epsilon
+$$
+#+end_definition

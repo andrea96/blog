@@ -27,11 +27,6 @@ function manageDarkMode() {
 
 function manageHyphenator() {
     document.getElementById('content').classList.add('hyphenate');
-    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-	MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
-	    data.math = data.math.replace(/\u00AD/g,"");
-	});
-    });
     Hyphenator.config({
     });
     Hyphenator.run();

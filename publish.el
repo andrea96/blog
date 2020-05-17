@@ -86,8 +86,7 @@
       blog-date-format "%b %d, %Y"
       blog-attachments (regexp-opt
 			'("jpg" "jpeg" "gif" "png" "svg" "mp4" "mp3" "ogg"
-			  "ico" "cur" "css" "js" "woff" "html" "pdf" "wasm"))
-      )
+			  "ico" "cur" "css" "js" "woff" "html" "pdf" "wasm")))
 
 (setq blog-macros '(("audio" . "
 @@html:<audio controls>
@@ -131,7 +130,7 @@ Your browser does not support the video tag.
 
 (setq blog-html-postamble
       (expand-template "
-<div id='footer-pre'>
+<div class='hyphenate' id='footer-pre'>
   <nav id='vertical-menu'><ul>{{{menu-html}}}</ul></nav>
   <button type='button' id='toggle-darkmode'></button>
   <nav>
@@ -233,8 +232,21 @@ Your browser does not support the video tag.
       org-src-fontify-natively t
       org-html-home/up-format ""
       org-html-table-caption-above nil
-      org-export-global-macros blog-macros)
+      org-export-global-macros blog-macros
+      org-html-mathjax-template "
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+    },
+  };
+  </script>
+  <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 
+
+
+")
+      
 (setq org-publish-project-alist
       `(("posts"
          :base-directory "posts"

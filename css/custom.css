@@ -6,7 +6,8 @@
     --color-blue: #4682dd;
     --color-dark-blue: #2222dd;
     --color-white: #fff;
-    --color-red: #f44;
+    --color-red: red;
+    --color-green: green;
 
     --font-serif: "charter";
     --font-mono: "fira";
@@ -59,12 +60,20 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     text-align: right;
     padding-right: calc((100% - 768px)/2);
     background-color: var(--color-dark-onyx);
-    margin: 0 0 3rem;
+    margin: 0;
+}
+
+header {
+    margin-bottom: 3rem;
 }
 
 .title {
-    text-align: left;
-    margin-bottom: 1.5em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
 }
 
 .horizontal-menu {
@@ -97,7 +106,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 #content {
     width: 768px;
-    margin: 0 auto 5rem;
+    margin: 0 auto 10rem;
 }
 
 #content {
@@ -108,13 +117,30 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 #content::after {
     content: "§";
-    position: absolute;
+    position: relative;
     left: 50%;
+    top: 4.5rem;
     font-size: 3rem;
 }
 
 li.on, li.trans, li.off {
     list-style: none;
+}
+
+span.done, span.todo {
+    color: var(--color-white);
+    padding: .1em 0.3em;
+    border-radius: 3px;
+    background-clip: padding-box;
+    line-height: 1;
+}
+
+span.done {
+    background-color: var(--color-green);
+}
+
+span.todo {
+    background-color: var(--color-red);
 }
 
 a {
@@ -123,17 +149,68 @@ a {
 }
 
 a:hover, a:focus {
-    color: var(--color-dark-blue);
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+    cursor: pointer;
+}
+
+h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::after, h6:hover::after {
+    content: "¶";
+    margin-left: 0.5rem;
+}
+
+span.section-number-1, span.section-number-2, span.section-number-3, span.section-number-4, span.section-number-5, span.section-number-6 {
+    position: absolute;
+    right: calc((100% - 768px) / 2);
+    color: #ccc;
+}
+
+div.theorem > p::before {
+    content: "Theorem:";
+    font-weight: bold;
+}
+
+div.lemma > p::before {
+    content: "Lemma:";
+    font-weight: bold;
+}
+
+div.proposition > p::before {
+    content: "Proposition:";
+    font-weight: bold;
+}
+
+div.definition > p::before {
+    content: "Definition:";
+    font-weight: bold;
+}
+
+div.proof > p::before {
+    content: "Proof:";
+    font-weight: bold;
+}
+
+div.proof > p::after {
+    font-weight: bold;
+    content: "□";
+    position: absolute;
+    right: calc((100% - 768px) / 2);
 }
 
 pre.example {
     margin: 1rem 0 0 0;
     padding: 0 1rem;
     border-left: 0.2rem dashed #ccc;
+    overflow-x: scroll;
+}
+
+pre.example::-webkit-scrollbar {
+    display: hidden;
+    height: 0;
 }
 
 pre {
@@ -186,7 +263,7 @@ blockquote p::after {
 
 video {
     display: block;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -197,7 +274,27 @@ audio {
 }
 
 table {
-    margin: 0 auto;
+    margin: 1em auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 2px solid;
+}
+
+table td + td, table th + th {
+    border-left: 1px solid var(--color-dark-onyx);
+}
+
+table tr {
+    border-top: 1px solid var(--color-onyx);
+}
+
+td,th {
+    padding: 0.3em 0.6em;
+    vertical-align: middle;
 }
 
 caption.t-bottom {
@@ -246,6 +343,7 @@ html, body {
 #footer-pre > nav, #footer-post > nav{
     max-width: 768px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 #footer-pre, #footer-post {
@@ -354,7 +452,7 @@ html, body {
 	display: initial;
     }
 
-    p, li {
+    #content {
 	font-size: 1.1rem;
     }
     
@@ -370,6 +468,13 @@ html, body {
     #toggle-darkmode {
 	right: 1rem;
     }
+    span.section-number-1, span.section-number-2, span.section-number-3, span.section-number-4, span.section-number-5, span.section-number-6 {
+	right: 1rem;
+    }
+
+    div.proof > p::after {
+	right: 1rem;
+    }
 }
 
 
@@ -377,6 +482,10 @@ html, body {
 
 body.darkmode {
     background-color: #000;
+    color: var(--color-light-grey);
+}
+
+h1.darkmode, h2.darkmode {
     color: var(--color-light-grey);
 }
 
@@ -388,3 +497,6 @@ body.darkmode .MathJax, body.darkmode .mjx-chtml, body.darkmode .MathJax_SVG {
     color: var(--color-light-grey);
 }
 
+pre.src.darkmode:before {
+    background-color: var(--color-dark-onyx);
+}

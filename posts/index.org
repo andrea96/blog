@@ -66,10 +66,18 @@ Sep 23, 2019
 </tr>
 <tr>
 <td>
-<a href='demo'>Demo post</a>
+<a href='demo'>Demo article</a>
 </td>
 <td>
 May 02, 2020
+</td>
+</tr>
+<tr>
+<td>
+<a href='sard'>Il teorema di Sard</a>
+</td>
+<td>
+May 17, 2020
 </td>
 </tr>
   </tbody>
