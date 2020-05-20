@@ -216,15 +216,17 @@ Your browser does not support the video tag.
 (advice-add 'org-export-output-file-name :around #'my-org-export-output-file-name)
 
 ;; Org settings
-(setq org-export-with-section-numbers t
+(setq org-export-with-section-numbers nil
       org-export-with-smart-quotes t
       org-export-with-toc nil
+      org-export-with-tags nil
       org-html-divs '((preamble "header" "top")
                       (content "main" "content")
                       (postamble "footer" "postamble"))
       org-html-container-element "section"
       org-html-metadata-timestamp-format blog-date-format
       org-html-checkbox-type 'html
+      org-export-with-emphasize t
       org-html-html5-fancy t
       org-html-validation-link t
       org-html-doctype "html5"

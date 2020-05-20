@@ -9,7 +9,7 @@
     --color-red: red;
     --color-green: green;
 
-    --font-serif: "charter";
+    --font-serif: "latin";
     --font-mono: "fira";
     --font-sans: "dejavu sans";
     --font-text-size: 1.4rem;
@@ -23,26 +23,30 @@
 }
 
 @font-face {
-    font-family: "charter";
-    src: url("../fonts/charter_regular.woff") format('woff');
+    font-family: "latin";
+    /* src: url("../fonts/latin_regular.woff") format('woff'); */
+    src: url("../fonts/lmroman10-regular.woff") format('woff');
 }
 
 @font-face {
-    font-family: "charter";
-    src: url("../fonts/charter_bold.woff") format('woff');
+    font-family: "latin";
+    /* src: url("../fonts/latin_bold.woff") format('woff'); */
+    src: url("../fonts/lmroman10-bold.woff") format('woff');
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "charter";
-    src: url("../fonts/charter_bold_italic.woff") format('woff');
+    font-family: "latin";
+    /* src: url("../fonts/latin_bold_italic.woff") format('woff'); */
+    src: url("../fonts/lmroman10-bolditalic.woff") format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: "charter";
-    src: url("../fonts/charter_italic.woff") format('woff');
+    font-family: "latin";
+    /* src: url("../fonts/latin_italic.woff") format('woff'); */
+    src: url("../fonts/lmroman10-italic.woff") format('woff');
     font-style: italic;
 }
 
@@ -52,8 +56,9 @@
 }
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
-    font-family: charter, serif;
+    font-family: latin, serif;
     color: var(--color-dark-onyx);
+    color: black;
 }
 
 #top {
@@ -167,6 +172,14 @@ span.section-number-1, span.section-number-2, span.section-number-3, span.sectio
     position: absolute;
     right: calc((100% - 768px) / 2);
     color: #ccc;
+}
+
+.footref::after {
+    content: "]";
+}
+
+.footref::before {
+    content: "[";
 }
 
 div.theorem > p::before {
@@ -474,6 +487,11 @@ html, body {
 
     div.proof > p::after {
 	right: 1rem;
+    }
+    .verse, .note, .warning {
+	margin: 1rem 0;
+	padding: 0 0 0 1rem;
+	color: inherit;
     }
 }
 

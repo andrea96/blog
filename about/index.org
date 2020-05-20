@@ -50,9 +50,10 @@ Some additional features, like the dark mode or the dynamically added hyphens,
 may require the use of Javascript or cookies, but they are implemented in a
 unobtrusive way, so the website is viewable even without javascript or cookies.
 
-The design is minimal and completely realized by me, the fonts used are [[https://practicaltypography.com/charter.html][Charter]],
-[[https://dejavu-fonts.github.io/][Dejavu]] and [[https://github.com/tonsky/FiraCode][Fira code]]. Furthermore, all the resources like images, javascripts,
-stylesheets and fonts are hosted in the this space, without using a cdn.
+The design is minimal and completely realized by me, the fonts used
+are [[https://en.wikipedia.org/wiki/Computer_Modern#Latin_Modern][Latin Modern]], [[https://dejavu-fonts.github.io/][Dejavu]] and [[https://github.com/tonsky/FiraCode][Fira code]]. Furthermore, all the resources
+like images, javascripts, stylesheets and fonts are hosted in the this
+space, without using a cdn.
 
 All the sources, both for the posts and the code, are inside the same [[https://github.com/andrea96/blog][Github
 repository]].
