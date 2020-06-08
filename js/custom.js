@@ -27,7 +27,7 @@ function manageDarkMode() {
 
 function manageHyphenator() {
     document.getElementById('content').classList.add('hyphenate');
-    document.getElementsByClassName('title').classList.add('donthyphenate');
+    Array.from(document.getElementsByClassName('title')).forEach(e => e.classList.add("donthyphenate"));
     Hyphenator.config({
     });
     Hyphenator.run();
