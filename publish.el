@@ -75,7 +75,7 @@
 (setq blog-url "https://cc0.tech/"
       blog-author "Andrea Ciceri"
       blog-email "andrea.ciceri@autistici.org"
-      blog-github "https://github.com/andrea96/"
+      blog-github "https://github.com/aciceri/"
       blog-fingerprint "
 7A66 EEA1 E6C5 98D0 7D36
 1287 A1FC 8953 2D1C 5654"
