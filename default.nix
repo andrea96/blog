@@ -37,7 +37,7 @@ let
       blog-build
       blog-compress
       [ $CI ] && blog-backup
-      ${pkgs.rsync}/bin/rsync -avz --delete -e "${pkgs.openssh}/bin/ssh -F /dev/null -o 'StrictHostKeyChecking no' -i /tmp/deploy_rsa" public/ andrea@cc0.tech:~/www/ 
+      ${pkgs.rsync}/bin/rsync -avz --delete -e "${pkgs.openssh}/bin/ssh -F /dev/null -o 'StrictHostKeyChecking no' -i /tmp/deploy_rsa" public/ andrea@ccr.ydns.eu:~/www/ 
     '';  
   blog-backup = pkgs.writeShellScriptBin "blog-backup"
     ''
