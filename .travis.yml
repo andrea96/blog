@@ -1,5 +1,7 @@
 language: nix
-script: nix upgrade-nix; nix-shell --pure --command "export TRAVIS_COMMIT='$TRAVIS_COMMIT'; export CI=$CI; blog-deploy"
+nix: 2.3.6
+script:
+  - nix-shell --pure --command "export TRAVIS_COMMIT='$TRAVIS_COMMIT'export CI=$CI; blog-deploy"
 cache:
   directories:
   - "$HOME/nix.store"
