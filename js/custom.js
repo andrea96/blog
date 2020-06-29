@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     manageDarkMode();
     manageHyphenator();
+    manageLightBox();
 })
 
 function manageDarkMode() {
@@ -31,4 +32,12 @@ function manageHyphenator() {
     Hyphenator.config({
     });
     Hyphenator.run();
+}
+
+function manageLightBox() {
+    console.log('ciao');
+    for (let img of document.getElementsByTagName('img'))
+	img.onclick = function () {
+	    console.log(this);
+	};
 }

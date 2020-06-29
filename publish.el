@@ -79,9 +79,9 @@
       blog-fingerprint "
 7A66 EEA1 E6C5 98D0 7D36
 1287 A1FC 8953 2D1C 5654"
-      blog-menu '(("about/" . "/")
+      blog-menu `(("about/" . "/")
 		  ("posts/" . "/posts/")
-		  ("github/" . blog-github)
+		  ("github/" . ,blog-github)
 		  ("rss/" . "/index.xml"))
       blog-date-format "%b %d, %Y"
       blog-attachments (regexp-opt
