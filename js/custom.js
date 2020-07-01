@@ -35,9 +35,19 @@ function manageHyphenator() {
 }
 
 function manageLightBox() {
-    console.log('ciao');
+    modal = document.createElement('div');
+    modal.id = 'lightbox';
+    modal.onclick = function () {
+	modal.style.display = 'none';
+	modal.innerHTML = '';
+	document.body.classList.toggle('noscroll');
+    };
+    document.body.appendChild(modal);
+    
     for (let img of document.getElementsByTagName('img'))
 	img.onclick = function () {
-	    console.log(this);
+	    modal.style.display = 'block';
+	    modal.appendChild(img.cloneNode());
+	    document.body.classList.toggle('noscroll');
 	};
 }
