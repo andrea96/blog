@@ -1,7 +1,7 @@
 #+title: ¡El pueblo unido jamás será vencido!
-#+date: <2019-09-23>
+#+date: <2020-07-02 Thu 14:02>
 #+language: en
-#+tags: music piano
+#+filetags: music piano
 
 In these boring and useless days between Christmas and New Year’s day
 I finally decided to record myself playing the theme from [[https://en.wikipedia.org/wiki/The_People_United_Will_Never_Be_Defeated!][The people

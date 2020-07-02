@@ -1,11 +1,4 @@
-;; These requirements are satisfied by Nix, see default.nix
-(require 'org)
-(require 'ox-publish)
-(require 'htmlize)
-(require 'ox-html)
-(require 'ox-rss)
-
-
+(require 'org-static-blog)
 ;; Useful functions and macros
 (defmacro setq-default (var val default)
   `(setq ,var (if ,val ,val ,default)))
@@ -46,48 +39,6 @@
     (perform-template-expansion-here values)
     (goto-char (point-max))))
 
-(defun tags-from-post (post-filename)
-  "Extract the `#+filetags:` from POST-FILENAME as list of strings."
-  (format "%s"
-  (let ((case-fold-search t))
-    (with-temp-buffer
-      (insert-file-contents post-filename)
-      (goto-char (point-min))
-      (if (search-forward-regexp "^\\#\\+filetags:[ ]*:\\(.*\\):$" nil t)
-          (split-string (match-string 1) ":")
-	(if (search-forward-regexp "^\\#\\+filetags:[ ]*\\(.+\\)$" nil t)
-            (split-string (match-string 1))
-	  ))))))
-
-(defun entries-to-html (entries)
-  (seq-reduce (lambda (a b)
-		(format "%s<li><a href='%s'>%s</a></li>" a (cdr b) (car b)))
-	      entries
-	      ""))
-
-(defmacro badge-to-html (link img)
-  (format "<a href='%s'><img src='%s' /></a>" link img))
-
-
-;; Blog settings
-(setq-default blog-commit (getenv "TRAVIS_COMMIT") "uncommitted")
-
-(setq blog-url "https://cc0.tech/"
-      blog-author "Andrea Ciceri"
-      blog-email "andrea.ciceri@autistici.org"
-      blog-github "https://github.com/aciceri/"
-      blog-fingerprint "
-7A66 EEA1 E6C5 98D0 7D36
-1287 A1FC 8953 2D1C 5654"
-      blog-menu `(("about/" . "/")
-		  ("posts/" . "/posts/")
-		  ("github/" . ,blog-github)
-		  ("rss/" . "/index.xml"))
-      blog-date-format "%b %d, %Y"
-      blog-attachments (regexp-opt
-			'("jpg" "jpeg" "gif" "png" "svg" "mp4" "mp3" "ogg"
-			  "ico" "cur" "css" "js" "woff" "html" "pdf" "wasm")))
-
 (setq blog-macros '(("audio" . "
 @@html:<audio controls>
 <source src='/audios/$1.ogg' type='audio/ogg'>
@@ -111,24 +62,57 @@ Your browser does not support the video tag.
 @@html:<asciinema-player preload='true' src='/casts/$1.cast'></asciinema-player>@@
 ")
 		    ))
-      
-(setq blog-html-head "
+
+(setq-default blog-commit (getenv "TRAVIS_COMMIT") "uncommitted")
+
+;; org-static-blog settings
+(setq org-static-blog-publish-title "Andrea Ciceri's blog")
+(setq org-static-blog-publish-url (if (string= blog-commit "uncommitted") "/" "https://blog.ccr.ydns.eu"))
+(setq org-static-blog-publish-directory "./public/")
+(setq org-static-blog-posts-directory "./posts/")
+(setq org-static-blog-drafts-directory "./drafts/")
+(setq org-static-blog-enable-tags t)
+(setq org-export-with-toc nil)
+(setq org-export-with-section-numbers nil)
+
+(setq org-static-blog-page-header "
+<meta name='author' content='Andrea Ciceri'>
+<meta name='referrer content'no-referrer'>
 <link rel='icon' type='image/x-icon' href='/images/favicon.png'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
-<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
-<link rel='stylesheet' href='/css/asciinema-player.css' type='text/css'/>
-<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
-<script src='/js/asciinema-player.js'></script>
-<script src='/js/custom.js'></script>
-<script src='/js/hyphenator.js'></script>
-")
-      
-(defun blog-html-preamble (plist)
+<link rel='stylesheet' href='static/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='static/css/syntax-coloring.css' type='text/css'/>
+<link rel='stylesheet' href='static/css/asciinema-player.css' type='text/css'/>
+<link rel='stylesheet' href='static/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='static/css/katex.min.css'/>
+<script defer src='static/js/katex.min.js'></script>
+<script defer src='static/js/auto-render.min.js'></script>
+<script src='static/js/asciinema-player.js'></script>
+<script src='static/js/custom.js'></script>
+<script src='static/js/hyphenator.js'></script>")
+
+(defun entries-to-html (entries)
+  (seq-reduce (lambda (a b)
+		(format "%s<li><a href='%s'>%s</a></li>" a (cdr b) (car b)))
+	      entries
+	      ""))
+
+
+(setq blog-github "aciceri"
+      blog-email "andrea.ciceri@autistici.org"
+      blog-fingerprint "
+7A66 EEA1 E6C5 98D0 7D36
+1287 A1FC 8953 2D1C 5654"
+      blog-menu `(("about/" . "/")
+		  ("posts/" . "/archive.html")
+		  ("github/" . ,(format "https://github.com/%s/" blog-github))
+		  ("rss/" . "rss.xml")))
+
+(setq org-static-blog-page-preamble
   (format "<nav class='horizontal-menu'><ul>%s</ul></nav>"
 	  (entries-to-html blog-menu)))
-
-(setq blog-html-postamble
+      
+(setq org-static-blog-page-postamble
       (expand-template "
 <div class='hyphenate' id='footer-pre'>
   <nav id='vertical-menu'><ul>{{{menu-html}}}</ul></nav>
@@ -161,61 +145,10 @@ Your browser does not support the video tag.
 			 ("email" . ,blog-email)
 			 ("pubkey" . "/andreaciceri-key.txt")
 			 ("hash" . ,blog-commit)
-			 ("built" . "https://travis-ci.org/github/andrea96/blog")
+			 ("built" . "https://travis-ci.org/github/aciceri/blog")
 			 ("fingerprint" . ,blog-fingerprint))))
 
-(defun blog-sitemap-function (title content)
-  (expand-template "
-#+begin_export html
-<h1>{{{title}}}</h1>
-<table style='width: 100%; text-align: left'>
-  <thead>
-    <th>Title</th>
-    <th>Date</th>
-  </thead>
-  <tbody>
-    {{{tbody}}}
-  </tbody>
-</table>
-#+end_export
-"
-		   `(("title" . ,title)
-		     ("tbody" . ,(seq-reduce (lambda (a b) (concat (car b) a)) (cdr content) "")))))
-
-(defun blog-sitemap-format-entry (entry style project)
-  (cond ((not (directory-name-p entry))
-         (expand-template "
-<tr>
-<td>
-<a href='{{{link}}}'>{{{title}}}</a>
-</td>
-<td>
-{{{date}}}
-</td>
-</tr>"
-			  `(("link" . ,(car (split-string entry "\\.")))
-			    ("title" . ,(org-publish-find-title entry project))
-			    ("date" . ,(format-time-string blog-date-format
-							   (org-publish-find-date entry project))))))
-	   ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
-        (t entry)))
-
-(defun my-org-export-output-file-name (orig-fun extension &optional subtreep pub-dir)
-  (if (string-match "posts/\\'" pub-dir)
-      (let ((path (buffer-file-name (buffer-base-buffer))))
-	(save-match-data (and (string-match "posts/\\([^@]+\\)\\.org\\'" path)
-			      (setq filename (match-string 1 path))))
-	(if (equal filename "index")
-	    (concat pub-dir "/index.html")
-	  (progn
-	    (make-directory (concat pub-dir filename))
-	    (concat pub-dir filename "/index.html")
-	    )))
-    (apply orig-fun extension subtreep pub-dir nil)))
-
-(advice-add 'org-export-output-file-name :around #'my-org-export-output-file-name)
-
-;; Org settings
+;; org settings
 (setq org-export-with-section-numbers nil
       org-export-with-smart-quotes t
       org-export-with-toc nil
@@ -224,7 +157,7 @@ Your browser does not support the video tag.
                       (content "main" "content")
                       (postamble "footer" "postamble"))
       org-html-container-element "section"
-      org-html-metadata-timestamp-format blog-date-format
+      org-html-metadata-timestamp-format "%b %d, %Y"
       org-html-checkbox-type 'html
       org-export-with-emphasize t
       org-html-html5-fancy t
@@ -244,104 +177,4 @@ Your browser does not support the video tag.
   };
   </script>
   <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
-
-
-
 ")
-      
-(setq org-publish-project-alist
-      `(("posts"
-         :base-directory "posts"
-         :base-extension "org"
-         :recursive nil
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./public/posts"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :auto-sitemap t
-         :sitemap-filename "index.org"
-         :sitemap-title "Posts archive"
-         :sitemap-format-entry blog-sitemap-format-entry
-	 :sitemap-function blog-sitemap-function
-         :sitemap-style list
-         :sitemap-sort-files anti-chronologically
-         :html-link-home "/"
-         :html-link-up "/"
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,blog-html-head
-         :html-preamble blog-html-preamble
-         :html-postamble ,blog-html-postamble)
-        ("about"
-         :base-directory "about"
-         :base-extension "org"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :index-filename "index.org"
-         :recursive nil
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./public/"
-         :html-link-home "/"
-         :html-link-up "/"
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,blog-html-head
-         :html-preamble blog-html-preamble
-         :html-postamble ,blog-html-postamble)
-        ("css"
-         :base-directory "./css"
-         :base-extension "css"
-         :publishing-directory "./public/css"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("js"
-         :base-directory "./js"
-         :base-extension "js"
-         :publishing-directory "./public/js"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("fonts"
-         :base-directory "./fonts"
-         :base-extension "woff"
-         :publishing-directory "./public/fonts"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("casts"
-         :base-directory "./casts"
-         :base-extension "cast"
-         :publishing-directory "./public/casts"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("images"
-         :base-directory "./images"
-         :base-extension ,blog-attachments
-         :publishing-directory "./public/images"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("videos"
-         :base-directory "./videos"
-         :base-extension ,blog-attachments
-         :publishing-directory "./public/videos"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("audios"
-         :base-directory "./audios"
-         :base-extension ,blog-attachments
-         :publishing-directory "./public/audios"
-	 :publishing-function org-publish-attachment
-         :recursive t)
-        ("rss"
-         :base-directory "./posts"
-         :base-extension "org"
-         :html-link-home "https://cc0.tech/"
-         :rss-link-home "https://cc0.tech/"
-         :html-link-use-abs-url t
-         :rss-extension "xml"
-         :publishing-directory "./public"
-         :publishing-function (org-rss-publish-to-rss)
-         :section-number nil
-         :exclude ".*"
-         :include ("index.org")
-         :table-of-contents nil)
-        ("all" :components ("posts" "css" "fonts" "images" "rss"))))
-
-
-(provide 'publish)

@@ -19,26 +19,26 @@
 
 @font-face {
     font-family: "fira";
-    src: url('../fonts/FiraCode-Regular.woff') format('woff');
+    src: url('fonts/FiraCode-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: "latin";
     /* src: url("../fonts/latin_regular.woff") format('woff'); */
-    src: url("../fonts/lmroman10-regular.woff") format('woff');
+    src: url("fonts/lmroman10-regular.woff") format('woff');
 }
 
 @font-face {
     font-family: "latin";
     /* src: url("../fonts/latin_bold.woff") format('woff'); */
-    src: url("../fonts/lmroman10-bold.woff") format('woff');
+    src: url("fonts/lmroman10-bold.woff") format('woff');
     font-weight: bold;
 }
 
 @font-face {
     font-family: "latin";
     /* src: url("../fonts/latin_bold_italic.woff") format('woff'); */
-    src: url("../fonts/lmroman10-bolditalic.woff") format('woff');
+    src: url("fonts/lmroman10-bolditalic.woff") format('woff');
     font-weight: bold;
     font-style: italic;
 }
@@ -46,13 +46,13 @@
 @font-face {
     font-family: "latin";
     /* src: url("../fonts/latin_italic.woff") format('woff'); */
-    src: url("../fonts/lmroman10-italic.woff") format('woff');
+    src: url("fonts/lmroman10-italic.woff") format('woff');
     font-style: italic;
 }
 
 @font-face {
     font-family: "dejavu-sans";
-    src: url("../fonts/DejaVuSans.woff") format('woff');
+    src: url("fonts/DejaVuSans.woff") format('woff');
 }
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
@@ -315,6 +315,10 @@ caption.t-bottom {
     margin-top: 1rem;
 }
 
+
+.katex { line-height: 1 !important; }
+
+/*
 .MathJax:focus, .mjx-chtml:focus, .MathJax_SVG:focus {
     outline-color: var(--color-dark-onyx);
     outline-style: dotted;
@@ -325,6 +329,7 @@ caption.t-bottom {
     color: var(--color-dark-onyx);
     font-size: 2rem;
 }
+*/
     
 .youtube-wrapper {
     padding-bottom: 56.25%;

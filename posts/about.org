@@ -10,7 +10,7 @@ The content of this blog is heterogeneous and I think that a better introduction
 than this would be difficult, so let’s move on.
 
 #+ATTR_HTML: :width 60% :height
-file:../../images/julia.png
+[[../static/images/julia.png]]
 
 The image is a render of the [[https://en.wikipedia.org/wiki/Julia_set][Julia set]] and is procedurally generated starting
 from the hash of the current git commit.

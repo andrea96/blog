@@ -8,11 +8,10 @@ with import <nixpkgs> {
 
 let
   customEmacs = (emacsWithPackagesFromUsePackage {
-    config = builtins.readFile ./publish.el;
+    config = "";
     package = pkgs.emacsUnstable;
     extraEmacsPackages = epkgs: [
-      epkgs.htmlize
-      epkgs.org-plus-contrib
+      epkgs.org-static-blog
     ];
   });  
   customPython = python3.withPackages (ps: with ps; [
@@ -24,9 +23,9 @@ let
   blog-build = pkgs.writeShellScriptBin "blog-build"
     ''
       [ ! $CI ] && rm -Rf public/ ~/.org-timestamps/
-      ${customEmacs}/bin/emacs --batch --no-init --load publish.el --funcall org-publish-all
+      ${customEmacs}/bin/emacs --batch --no-init --load publish.el --eval "(setq debug-on-error t)" --funcall org-static-blog-publish
       [ $CI ] && blog-julia $CI
-      cp andreaciceri-key.txt public/
+      cp -R static/ public/
     '';
   blog-serve = pkgs.writeShellScriptBin "blog-serve"
     ''

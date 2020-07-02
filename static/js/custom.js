@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     manageDarkMode();
     manageHyphenator();
     manageLightBox();
+    manageKatex();
 })
 
 function manageDarkMode() {
@@ -50,4 +51,8 @@ function manageLightBox() {
 	    modal.appendChild(img.cloneNode());
 	    document.body.classList.toggle('noscroll');
 	};
+}
+
+function manageKatex() {
+    renderMathInElement(document.body);
 }
