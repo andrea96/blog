@@ -168,13 +168,4 @@ Your browser does not support the video tag.
       org-html-home/up-format ""
       org-html-table-caption-above nil
       org-export-global-macros blog-macros
-      org-html-mathjax-template "
-  <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    },
-  };
-  </script>
-  <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
-")
+)
