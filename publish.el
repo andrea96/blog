@@ -169,3 +169,39 @@ Your browser does not support the video tag.
       org-html-table-caption-above nil
       org-export-global-macros blog-macros
 )
+
+(setq org-static-blog-tags-file "tag/index.html"
+      org-static-blog-archive-file "archive/index.html"
+      org-static-blog-rss-file "rss/index.rss")
+
+(advice-add 'org-static-blog-generate-post-path
+	    :around #'(lambda (orig-fun &rest args)
+  (let* ((filename (car args))
+	 (new-filename (concat "post/"
+			       (file-name-sans-extension filename)
+			       "/index.html")))
+    (apply orig-fun (cons new-filename (cdr args))))))
+
+(defun org-static-blog-assemble-tags ()
+  (org-static-blog-assemble-tags-archive)
+  (dolist (tag (org-static-blog-get-tag-tree))
+    (org-static-blog-assemble-multipost-page
+     (concat org-static-blog-publish-directory "tag/" (downcase (car tag)) "/index.html")
+     (cdr tag)
+     (concat "<h1 class=\"title\">" (org-static-blog-gettext 'posts-tagged) " \"" (car tag) "\":</h1>"))))
+
+(defun org-static-blog-post-taglist (post-filename)
+  (let ((taglist-content ""))
+    (when (and (org-static-blog-get-tags post-filename) org-static-blog-enable-tags)
+      (setq taglist-content (concat "<a href=\""
+                                    (org-static-blog-get-absolute-url org-static-blog-tags-file)
+                                    "\">" (org-static-blog-gettext 'tags) "</a>: "))
+      (dolist (tag (org-static-blog-get-tags post-filename))
+        (setq taglist-content (concat taglist-content "<a href=\""
+                                      (org-static-blog-get-absolute-url (concat "tag/" (downcase tag) "/"))
+                                      "\">" tag "</a> "))))
+    taglist-content))
+
+(advice-add 'org-static-blog-get-post-url
+	    :around #'(lambda (orig-fun &rest args)
+			(file-name-directory (apply orig-fun args))))
