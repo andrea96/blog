@@ -8,6 +8,7 @@ cache:
 branches:
   only:
   - travis-test
+  - org-static-blog
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - chmod 600 /tmp/deploy_rsa

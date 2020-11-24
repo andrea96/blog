@@ -9,7 +9,7 @@ with import <nixpkgs> {
 let
   customEmacs = (emacsWithPackagesFromUsePackage {
     config = "";
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacsUnstable-nox;
     extraEmacsPackages = epkgs: [
       epkgs.org-static-blog
     ];
